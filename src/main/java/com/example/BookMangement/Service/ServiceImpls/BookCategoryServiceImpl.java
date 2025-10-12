@@ -33,7 +33,7 @@ public class BookCategoryServiceImpl implements BookCategoryService {
 
         try {
             Optional<BookCategory> bookCategory = bookCategoryRepository.findById(id);
-            return bookCategory.orElseThrow(() -> new RuntimeException("Book category not found with id: " + id));
+            return bookCategory.orElseThrow(() -> new RuntimeException("Danh mục sản phẩm not found with id: " + id));
         } catch (Exception ex) {
             log.error("BookCategoryServiceImpl_getBookCategoryById_Error :", ex);
             return null;

@@ -47,11 +47,11 @@ public class SecurityConfig {
         http.csrf().disable()
                 .authorizeHttpRequests((authorize) ->
                         authorize
-                                // .requestMatchers("/**").permitAll()
-                                .requestMatchers("/").hasAnyAuthority("ADMIN","EMPLOYEE")
-                                .requestMatchers("/admin/**").hasAuthority("ADMIN")
-                                .requestMatchers("/employee/**").hasAuthority("ADMIN")
-                                .requestMatchers("/assets/**").permitAll()
+                                 .requestMatchers("/**").permitAll()
+//                                .requestMatchers("/").hasAnyAuthority("ADMIN","EMPLOYEE")
+//                                .requestMatchers("/admin/**").hasAuthority("ADMIN")
+//                                .requestMatchers("/employee/**").hasAuthority("ADMIN")
+                                .requestMatchers("/admin/assets/**").permitAll()
 
                                 .anyRequest().authenticated()
 

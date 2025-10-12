@@ -35,30 +35,29 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "202403_author")
+@Table(name = "author")
 public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Your name is required")
-    @Column(name = "name",nullable = false)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "CREATE_DATE",nullable = false)
+    @Column(name = "CREATE_DATE")
     private LocalDate createDate;
 
-    @Column(name = "CREATE_BY",nullable = false)
+    @Column(name = "CREATE_BY")
     private String createBy;
 
-    @Column(name = "UPDATE_DATE",nullable = false)
+    @Column(name = "UPDATE_DATE")
     private LocalDate updateDate;
 
-    @Column(name = "UPDATE_BY",nullable = false)
+    @Column(name = "UPDATE_BY")
     private String updateBy;
 
-    @Column(name = "IS_DELETE",nullable = false)
+    @Column(name = "IS_DELETE")
     private Boolean isDelete;
 
 }

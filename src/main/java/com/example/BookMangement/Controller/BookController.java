@@ -114,7 +114,7 @@ public class BookController {
 
 
     @PostMapping("/save-book")
-    public String saveBook(HttpSession session, @Valid @ModelAttribute("book") Book book, BindingResult bindingResult, RedirectAttributes redirectAttributes,  Model model) {
+    public String saveBook(HttpSession session,  @ModelAttribute("book") Book book, BindingResult bindingResult, RedirectAttributes redirectAttributes,  Model model) {
 
 
         String name = (String) session.getAttribute("name");
@@ -130,19 +130,16 @@ public class BookController {
     }
 
     @PostMapping("/edit-book/edit")
-    public String editBook(HttpSession session, @ModelAttribute("book") Book book, BindingResult bindingResult, @RequestParam("bookCategories") List<Long> bookCategoryIds, @RequestParam("authors") List<Long> authorIds, RedirectAttributes redirectAttributes)  {
+    public String editBook(HttpSession session, @ModelAttribute("book") Book book, BindingResult bindingResult, @RequestParam("bookCategories") List<Long> bookCategoryIds, RedirectAttributes redirectAttributes)  {
         String nameLogin = (String) session.getAttribute("name");
         book.setUpdateBy(nameLogin);
         book.setUpdateDate(LocalDate.now());
         book.setIsDelete(book.getIsDelete());
         book.clearBookCategories();
-        book.clearAuthors();
+//        book.clearAuthors();
 
         List<BookCategory> bookCategories = bookCategoryRepository.findAllById(bookCategoryIds);
         book.setBookCategories(new HashSet<>(bookCategories));
-
-        List<Author> authors = authorRepository.findAllById(authorIds);
-        book.setAuthors(new HashSet<>(authors));
         bookRepository.save(book);
         redirectAttributes.addFlashAttribute("editBookSuccess", "Success edit book !");
         return "redirect:/book/edit-book/" + book.getId();

@@ -9,29 +9,29 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="assets/css/stylefunction.css">
+  <link rel="stylesheet" href="/admin/assets/css/stylefunction.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 
 
     <!-- Favicons -->
-    <link href="/assets/img/favicon.png" rel="icon">
-    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/admin/assets/img/favicon.png" rel="icon">
+    <link href="/admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/admin/assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
     * Template Name: NiceAdmin
@@ -49,7 +49,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="/" class="logo d-flex align-items-center">
-            <img src="/assets/img/logo.png" alt="">
+            <img src="/admin/assets/img/logo.png" alt="">
             <span class="d-none d-lg-block">Book Management</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -164,7 +164,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                            <img src="/admin/assets/img/messages-1.jpg" alt="" class="rounded-circle">
                             <div>
                                 <h4>Maria Hudson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -178,7 +178,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                            <img src="/admin/assets/img/messages-2.jpg" alt="" class="rounded-circle">
                             <div>
                                 <h4>Anna Nelson</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -192,7 +192,7 @@
 
                     <li class="message-item">
                         <a href="#">
-                            <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                            <img src="/admin/assets/img/messages-3.jpg" alt="" class="rounded-circle">
                             <div>
                                 <h4>David Muldon</h4>
                                 <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -292,13 +292,13 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="/author/">
                 <i class="ri-user-star-fill"></i>
-                <span>Author</span>
+                <span>Nhà sản xuất</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="/book-category/">
                 <i class="ri-book-read-fill"></i>
-                <span>Book category</span>
+                <span>Danh mục sản phẩm</span>
             </a>
         </li>
     </ul>
@@ -330,41 +330,29 @@
                 <input hidden th:field="*{isDelete}" />
                 <input hidden th:field="*{createDate}" />
                  <div class="row mb-3">
-                    <label for="title" class="col-sm-2 col-form-label">Title</label>
+                    <label for="title" class="col-sm-2 col-form-label">Tên</label>
                     <div class="col-sm-10">
                         <input type="text"  id="title" required  oninvalid="this.setCustomValidity('Your title is required')" name="title" onchange="this.setCustomValidity('')"  th:field="*{title}" class="form-control">
                         <span class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label for="price" class="col-sm-2 col-form-label">Price</label>
+                    <label for="description" class="col-sm-2 col-form-label">Mô tả</label>
                     <div class="col-sm-10">
-                        <input type="number"  step="0.01" min="1" required  oninvalid="this.setCustomValidity('Your price is required')" onchange="this.setCustomValidity('')" id="price" name="price"  th:field="*{price}" class="form-control">
-                        <span class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
+                        <input type="text"  id="description" required  oninvalid="this.setCustomValidity('Your description is required')" name="description" onchange="this.setCustomValidity('')"  th:field="*{description}" class="form-control">
+                        <span class="text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
                     </div>
                 </div>
+
                 <div class="row mb-3">
-                    <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
-                    <div class="col-sm-10">
-                        <input type="number" min="1" id="quantity" required  oninvalid="this.setCustomValidity('Your quantity is required')" onchange="this.setCustomValidity('')" name="quantity"  th:field="*{quantity}" class="form-control">
-                        <span class="text-danger" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></span>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="publishYear" class="col-sm-2 col-form-label">Publish year</label>
+                    <label for="publishYear" class="col-sm-2 col-form-label">Năm sản xuất</label>
                     <div class="col-sm-10">
                         <input type="number" min="1" id="publishYear" name="publishYear"  th:field="*{publishYear}" class="form-control">
                         <span class="text-danger" th:if="${#fields.hasErrors('publishYear')}" th:errors="*{publishYear}"></span>
                     </div>
                 </div>
 
-                <div class="row mb-3">
-                    <label for="createBy" class="col-sm-2 col-form-label">Create by</label>
-                    <div class="col-sm-10">
-                        <input type="text"  id="createBy" name="createBy" disabled th:field="*{createBy}" class="form-control">
-                        <span class="text-danger" th:if="${#fields.hasErrors('createBy')}" th:errors="*{createBy}"></span>
-                    </div>
-                </div>
+
                 <div class="row mb-3">
                     <label for="createDate" class="col-sm-2 col-form-label">Create date</label>
                     <div class="col-sm-10">
@@ -372,12 +360,7 @@
                         <span class="text-danger" th:if="${#fields.hasErrors('createDate')}" th:errors="*{createDate}"></span>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="updateBy" class="col-sm-2 col-form-label">Update by</label>
-                    <div class="col-sm-10">
-                        <input type="text"  id="updateBy" name="updateBy" disabled th:field="*{updateBy}" class="form-control">
-                    </div>
-                </div>
+
 
                 <div class="row mb-3">
                     <label for="updateDate" class="col-sm-2 col-form-label">Update date</label>
@@ -394,45 +377,27 @@
                 <div class="row mb-12">
                     <div class="col-md-6">
                         <div class="row mb-3">
-                            <label for="category" class="col-sm-3 col-form-label">Book category</label>
+                            <label for="category" class="col-sm-3 col-form-label">Danh mục sản phẩm</label>
                             <div class="col-sm-7" style="padding-left: 10%;" id="category">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Select category
-                                    </button>
-                                    <ul class="dropdown-menu" style="max-height: 200px; overflow-y:scroll;" aria-labelledby="categoryDropdown">
-                                        <li th:each="list : ${bookCategoryList}">
-                                            <input  th:field="*{bookCategories}" name="bookCategories" th:value="${list.id}"  type="checkbox" class="form-check-input">
-                                            <label class="form-check-label" th:text="${list.title}">One</label>
-                                        </li>
-
-                                    </ul>
+                                <div class="form-group">
+                                    <div style="max-height: 200px; overflow-y: auto; border: 1px solid #ccc; border-radius: 5px; padding: 10px;">
+                                        <div th:each="cat : ${bookCategoryList}" class="form-check mb-2">
+                                            <input type="checkbox"
+                                                   th:id="'cat_' + ${cat.id}"
+                                                   th:value="${cat.id}"
+                                                   th:field="*{bookCategories}"
+                                                   class="form-check-input"
+                                                   th:checked="${#lists.contains(book.bookCategories, cat)}">
+                                            <label th:for="'cat_' + ${cat.id}" class="form-check-label" th:text="${cat.title}">Category</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row mb-3">
-
-                            <label for="author" class="col-sm-2 col-form-label">Book author</label>
-
-                            <div class="col-sm-10" id="author">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="authorDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Select author
-                                    </button>
-                                    <ul class="dropdown-menu" style="max-height: 200px; overflow-y:scroll;" aria-labelledby="authorDropdown">
-                                        <li th:each="author : ${authorList}">
-                                            <input th:value="${author.id}"  th:field="*{authors}" name="authors"  type="checkbox" class="form-check-input">
-                                            <label class="form-check-label" th:text="${author.name}">One</label>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
 
                     </div>
+
 
                 </div>
 
@@ -546,27 +511,10 @@
 
         </div>
         <script>
-            function validateForm() {
-
-                    var selectedCategories = document.querySelectorAll('input[type="checkbox"][name="bookCategories"]:checked');
-                    var selectedAuthors = document.querySelectorAll('input[type="checkbox"][name="authors"]:checked');
-
-                    if (selectedCategories.length < 1||selectedAuthors.length < 1) {
-                        alert('Please select at-least 1 category and author');
-                        return false;
-                    }
-                    return true;
-                }
 
 
-                function valideNumber() {
-                    var charCode = (event.which) ? event.which : event.keyCode;
-                    if (charCode >= 48 && charCode <= 57) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                }
+
+
         </script>
     </section>
 
@@ -578,22 +526,22 @@
 
 </footer><!-- End Footer -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script  src="/assets/js/function.js"></script>
+  <script  src="/admin/assets/js/function.js"></script>
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/chart.js/chart.umd.js"></script>
-<script src="assets/vendor/echarts/echarts.min.js"></script>
-<script src="assets/vendor/quill/quill.js"></script>
-<script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-<script src="assets/vendor/tinymce/tinymce.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="/admin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="/admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/admin/assets/vendor/chart.js/chart.umd.js"></script>
+<script src="/admin/assets/vendor/echarts/echarts.min.js"></script>
+<script src="/admin/assets/vendor/quill/quill.js"></script>
+<script src="/admin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="/admin/assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="/admin/assets/vendor/php-email-form/validate.js"></script>
 
 <!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
+<script src="/admin/assets/js/main.js"></script>
 
 </body>
 

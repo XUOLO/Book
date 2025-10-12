@@ -1,38 +1,23 @@
 package com.example.BookMangement.Controller.RestController;
 
 import com.example.BookMangement.Entity.Book;
-import com.example.BookMangement.Entity.Role;
-import com.example.BookMangement.Entity.Ticket;
 import com.example.BookMangement.Entity.TicketItem;
-import com.example.BookMangement.Entity.User;
 import com.example.BookMangement.Repository.BookRepository;
-import com.example.BookMangement.Repository.TicketDetailRepository;
-import com.example.BookMangement.Repository.TicketRepository;
 import com.example.BookMangement.Repository.UserRepository;
 import com.example.BookMangement.Service.BookService;
 import com.example.BookMangement.Service.ListTicketService;
 import com.example.BookMangement.Service.MemberService;
-import com.example.BookMangement.Service.TicketService;
-import com.example.BookMangement.Service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * TicketRestController
@@ -55,12 +40,6 @@ public class TicketRestController {
     private BookService bookService;
     @Autowired
     private ListTicketService listTicketService;
-    @Autowired
-    private TicketService ticketService;
-    @Autowired
-    private TicketDetailRepository ticketDetailRepository;
-    @Autowired
-    private TicketRepository ticketRepository;
 
     @GetMapping("/all-book")
     public List<Book> listAllBook(){
@@ -78,32 +57,9 @@ public class TicketRestController {
          listTicketService.remove(id);
     }
 
-    @GetMapping("/infoMember")
-    public int showInfoMember(@RequestParam("memberId") long memberId) {
-        return ticketDetailRepository.getTotalQuantityByMemberId(memberId);
 
-    }
-    @GetMapping("/totalBookMember")
-    public ResponseEntity<Integer> getTotalByMemberId(@RequestParam("memberId") String memberId) {
-        try {
-            Long memberIdLong = Long.valueOf(memberId);
-            int total = ticketService.getTotalByMemberId(memberIdLong);
-            return ResponseEntity.ok(total);
-        } catch (NumberFormatException e) {
-            return ResponseEntity.badRequest().body(null);
-        }
-    }
 
-    @GetMapping("/totalBookOverdue")
-    public ResponseEntity<Optional<Integer>> getTotalBookOverdueByMemberId(@RequestParam("memberId") String memberId) {
-        try {
-            Long memberIdLong = Long.valueOf(memberId);
-            Optional<Integer> total = ticketService.getTotalBookOverdueByMemberId(memberIdLong);
-            return ResponseEntity.ok(total);
-        } catch (NumberFormatException e) {
-            return ResponseEntity.badRequest().body(null);
-        }
-    }
+
     @GetMapping("/update")
     public void updateItem(@RequestParam("bookId") Integer bookId, @RequestParam("quantity") Integer quantity, HttpServletRequest request) {
         listTicketService.update(bookId, quantity);
@@ -130,32 +86,5 @@ public class TicketRestController {
     return bookService.searchBook(keyword);
     }
 
-    @GetMapping("/ticket-date")
-    public ResponseEntity<Map<String, List<?>>> getAllTicketsByTakeDate() {
-        List<Ticket> tickets = ticketRepository.findAll();
 
-        Map<LocalDate, Integer> totalsByTakeDate = new HashMap<>();
-        for (Ticket ticket : tickets) {
-            LocalDate takeDate = ticket.getTakeDate();
-            int total = ticket.getTotal();
-            totalsByTakeDate.merge(takeDate, total, Integer::sum);
-        }
-
-        List<LocalDate> sortedTakeDates = new ArrayList<>(totalsByTakeDate.keySet());
-        sortedTakeDates.sort(Comparator.naturalOrder());
-
-        List<Integer> quantities = new ArrayList<>();
-        List<String> takeDates = new ArrayList<>();
-
-        for (LocalDate takeDate : sortedTakeDates) {
-            quantities.add(totalsByTakeDate.get(takeDate));
-            takeDates.add(takeDate.toString());
-        }
-
-        Map<String, List<?>> result = new HashMap<>();
-        result.put("quantity", quantities);
-        result.put("takeDate", takeDates);
-
-        return new ResponseEntity<>(result, HttpStatus.OK);
-    }
 }

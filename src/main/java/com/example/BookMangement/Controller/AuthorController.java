@@ -105,7 +105,7 @@ public class AuthorController {
     }
 
     @PostMapping("/save-author")
-    public String saveAuthor(HttpSession session, @Valid @ModelAttribute("author") Author author, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+    public String saveAuthor(HttpSession session,  @ModelAttribute("author") Author author, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("errorAuthor", "Fail add new author !");
             return "Author/new-author";
@@ -124,7 +124,7 @@ public class AuthorController {
 
 
     @PostMapping("/edit-author/edit")
-    public String editAuthor(HttpSession session, @Valid @ModelAttribute("author") Author author, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String editAuthor(HttpSession session,  @ModelAttribute("author") Author author, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("errorAuthor", "Fail edit author !");
             return "redirect:/author/edit-author/" + author.getId();

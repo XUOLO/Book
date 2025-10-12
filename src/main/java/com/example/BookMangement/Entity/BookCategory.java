@@ -29,26 +29,25 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "202403_BOOK_CATEGORY")
+@Table(name = "BOOK_CATEGORY")
 public class BookCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Your title is required")
-    @Column(name = "title", nullable = false)
+    @Column(name = "title")
     private String title;
 
-    @Column(name = "CREATE_DATE",nullable = false)
+    @Column(name = "CREATE_DATE")
     private LocalDate createDate;
 
-    @Column(name = "CREATE_BY",nullable = false)
+    @Column(name = "CREATE_BY")
     private String createBy;
 
-    @Column(name = "UPDATE_TIME",nullable = false)
+    @Column(name = "UPDATE_TIME")
     private LocalDate updateDate;
 
-    @Column(name = "UPDATE_BY",nullable = false)
+    @Column(name = "UPDATE_BY")
     private String updateBy;
 
     @Column(name = "IS_DELETE")

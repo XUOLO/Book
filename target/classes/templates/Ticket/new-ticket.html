@@ -19,16 +19,16 @@
           rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/admin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/admin/assets/css/style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
             integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -48,7 +48,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="/" class="logo d-flex align-items-center">
-            <img src="/assets/img/logo.png" alt="">
+            <img src="/admin/assets/img/logo.png" alt="">
             <span class="d-none d-lg-block">Book Management</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -283,19 +283,19 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="/author/">
                 <i class="ri-user-star-fill"></i>
-                <span>Author</span>
+                <span>Nhà sản xuất</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="/book-category/">
                 <i class="ri-book-read-fill"></i>
-                <span>Book category</span>
+                <span>Danh mục sản phẩm</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="/book/">
                 <i class="bi bi-book"></i>
-                <span>Book</span>
+                <span>Sản phẩm</span>
             </a>
         </li>
         <li class="nav-item">
@@ -304,12 +304,7 @@
                 <span>Member</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="/ticket/">
-                <i class="ri-todo-line"></i>
-                <span>Ticket</span>
-            </a>
-        </li>
+
     </ul>
 </aside><!-- End Sidebar-->
 
@@ -564,7 +559,7 @@
                             <tr>
                             <th scope="row">${index + 1}</th>
                             <td style="padding-right: 25px;">
-                            <img height="100px" ${item.image ? `src="${item.image}"` : `src="/assets/img/bookDefault.png"`} alt="">
+                            <img height="100px" ${item.image ? `src="${item.image}"` : `src="/admin/assets/img/bookDefault.png"`} alt="">
                             </td>
                             <td style="padding-right: 25px;">${item.title}</td>
                             <td style="padding-right: 25px;">${item.price}$</td>
@@ -610,7 +605,7 @@
                                                  <tr>
                                                      <th scope="row">${index + 1}</th>
                                                      <td style="padding-right: 25px;">
-                                                         <img height="100px" ${item.image ? `src="${item.image}"` : `src="/assets/img/bookDefault.png"`} alt="">
+                                                         <img height="100px" ${item.image ? `src="${item.image}"` : `src="/admin/assets/img/bookDefault.png"`} alt="">
                                                      </td>
                                                      <td style="padding-right: 25px;">${item.title}</td>
                                                      <td style="padding-right: 25px;">${item.price}$</td>
@@ -671,7 +666,7 @@
 
                                         <img height="100px" th:if="${list.image != null}" th:src="${list.image}" alt="">
                                         <img height="100px" th:unless="${list.image != null}"
-                                             src="/assets/img/bookDefault.png" alt="">
+                                             src="/admin/assets/img/bookDefault.png" alt="">
                                     </td>
                                     <td th:text="${list.title}">Brandon Jacob</td>
                                     <td th:text="${list.price}+'$'">Designer</td>
@@ -750,17 +745,17 @@
         class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="/assets/vendor/apexcharts/apexcharts.min.js"></script>
-<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/vendor/chart.js/chart.umd.js"></script>
-<script src="/assets/vendor/echarts/echarts.min.js"></script>
-<script src="/assets/vendor/quill/quill.js"></script>
-<script src="/assets/vendor/simple-datatables/simple-datatables.js"></script>
-<script src="/assets/vendor/tinymce/tinymce.min.js"></script>
-<script src="/assets/vendor/php-email-form/validate.js"></script>
+<script src="/admin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="/admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/admin/assets/vendor/chart.js/chart.umd.js"></script>
+<script src="/admin/assets/vendor/echarts/echarts.min.js"></script>
+<script src="/admin/assets/vendor/quill/quill.js"></script>
+<script src="/admin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="/admin/assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="/admin/assets/vendor/php-email-form/validate.js"></script>
 
 <!-- Template Main JS File -->
-<script src="/assets/js/main.js"></script>
+<script src="/admin/assets/js/main.js"></script>
 
 </body>
 

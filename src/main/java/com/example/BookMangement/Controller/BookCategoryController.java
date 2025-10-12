@@ -105,10 +105,10 @@ public class BookCategoryController {
     }
 
     @PostMapping("/save-book-category")
-    public String saveBookCategory(HttpSession session, @Valid @ModelAttribute("bookCategory") BookCategory bookCategory, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+    public String saveBookCategory(HttpSession session,  @ModelAttribute("bookCategory") BookCategory bookCategory, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
 
         if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("errorBookCategory", "Fail save book category!");
+            redirectAttributes.addFlashAttribute("errorBookCategory", "Fail save Danh mục sản phẩm!");
             return "BookCategory/new-book-category";
         }
         String name = (String) session.getAttribute("name");
@@ -119,7 +119,7 @@ public class BookCategoryController {
         bookCategory.setUpdateBy(name);
         bookCategory.setIsDelete(false);
         bookCategoryRepository.save(bookCategory);
-        redirectAttributes.addFlashAttribute("newBookCategorySuccess", "Success add new book category!");
+        redirectAttributes.addFlashAttribute("newBookCategorySuccess", "Success add new Danh mục sản phẩm!");
         return "redirect:/book-category/new-book-category";
     }
 
@@ -131,7 +131,7 @@ public class BookCategoryController {
         bookCategory.setUpdateDate(LocalDate.now());
         bookCategory.setIsDelete(false);
         bookCategoryRepository.save(bookCategory);
-        redirectAttributes.addFlashAttribute("editBookCategorySuccess", "Success edit book category !");
+        redirectAttributes.addFlashAttribute("editBookCategorySuccess", "Success edit Danh mục sản phẩm !");
         return "redirect:/book-category/edit-book-category/" + bookCategory.getId();
     }
     @PostMapping("/search")
@@ -140,7 +140,7 @@ public class BookCategoryController {
         String userRole = authentication.getAuthorities().iterator().next().getAuthority();
         model.addAttribute("userRole",userRole);
         if (categories.isEmpty()) {
-            String errorMessage = "No matching book category found";
+            String errorMessage = "No matching Danh mục sản phẩm found";
             model.addAttribute("errorMessage", errorMessage);
             return findPaginatedBookCategory(authentication,1,model,"title","asc");
         } else {

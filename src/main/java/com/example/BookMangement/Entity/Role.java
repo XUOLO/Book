@@ -28,14 +28,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "202403_ROLE")
+@Table(name = "ROLE")
 public class Role  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Size(max = 50, message = "Name must be less than 50 characters")
-    @NotBlank(message = "Name is required")
     @Column(name = "name", length = 50, nullable = false)
     private String name;
 

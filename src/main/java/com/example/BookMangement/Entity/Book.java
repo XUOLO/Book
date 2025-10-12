@@ -38,41 +38,41 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "202403_Books")
+@Table(name = "Books")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @NotBlank(message = "Your tile is required")
+    
     @Column(name = "title")
     private String title;
+
+    @Column(name = "description")
+    private String description;
 
 
     @Column(name = "quantity")
     private int quantity;
 
-    @Min(value = 1, message = "Your price should be greater than or equal to 1")
     @Column(name = "price")
     private double price;
 
     @Column(name = "publish_year")
     private int publishYear;
 
-    @NotBlank(message = "Your image is required")
     @Column(name = "image_url", columnDefinition = "TEXT")
     private String image;
 
-    @Column(name = "CREATE_DATE",nullable = false)
+    @Column(name = "CREATE_DATE")
     private LocalDate createDate;
 
-    @Column(name = "CREATE_BY",nullable = false)
+    @Column(name = "CREATE_BY")
     private String createBy;
 
-    @Column(name = "UPDATE_DATE",nullable = false)
+    @Column(name = "UPDATE_DATE")
     private LocalDate updateDate;
 
-    @Column(name = "UPDATE_BY",nullable = false)
+    @Column(name = "UPDATE_BY")
     private String updateBy;
 
     @Column(name = "IS_DELETE")
@@ -80,14 +80,14 @@ public class Book {
 
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "202403_book_bookcategory",
+    @JoinTable(name = "book_bookcategory",
             joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "bookcategory_id", referencedColumnName = "id")
     )
     private Set<BookCategory> bookCategories;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "202403_book_author",
+    @JoinTable(name = "book_author",
             joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "author_id", referencedColumnName = "id")
     )

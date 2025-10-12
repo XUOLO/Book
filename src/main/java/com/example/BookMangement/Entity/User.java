@@ -38,48 +38,41 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "202403_USERS")
+@Table(name = "USERS")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Your name is required")
-    @Column(name = "name",nullable = false)
+    @Column(name = "name")
     private String name;
 
-    @Email(message = "email is invalid!")
-    @Column(name = "email",nullable = false)
+    @Column(name = "email")
     private String email;
 
-    @NotBlank(message = "Your address is required")
-    @Column(name = "address",nullable = false)
+    @Column(name = "address")
     private String address;
 
-    @NotBlank(message = "Your phone is required")
-    @Pattern(regexp = "\\d{10}", message = "Invalid phone number")
     @Column(name = "phone")
     private String phone;
 
-    @NotBlank(message = "Your username is required")
-    @Column(name = "username",nullable = false)
+    @Column(name = "username")
     private String username;
 
-    @NotBlank(message = "Your password is required")
-    @Column(name = "password",nullable = false)
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "CREATE_DATE",nullable = false)
+    @Column(name = "CREATE_DATE")
     private LocalDate createDate;
 
-    @Column(name = "CREATE_BY",nullable = false)
+    @Column(name = "CREATE_BY")
     private String createBy;
 
-    @Column(name = "UPDATE_DATE",nullable = false)
+    @Column(name = "UPDATE_DATE")
     private LocalDate updateDate;
 
-    @Column(name = "UPDATE_BY",nullable = false)
+    @Column(name = "UPDATE_BY")
     private String updateBy;
 
     @Column(name = "IS_DELETE")
@@ -87,7 +80,7 @@ public class User {
 
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "202403_users_roles",
+    @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )

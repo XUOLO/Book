@@ -1,31 +1,19 @@
 package com.example.BookMangement.Controller;
 
-import com.example.BookMangement.Entity.Role;
-import com.example.BookMangement.Entity.User;
 import com.example.BookMangement.Repository.RoleRepository;
 import com.example.BookMangement.Repository.UserRepository;
 import com.example.BookMangement.Service.BookService;
 import com.example.BookMangement.Service.MemberService;
-import com.example.BookMangement.Service.TicketService;
 import com.example.BookMangement.Service.UserService;
 import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
-import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.List;
 
 /**
  * @author xuanl
@@ -43,9 +31,7 @@ public class AuthenController {
     private RoleRepository roleRepository;
     @Autowired
     private MemberService memberService;
-    @Autowired
-    private TicketService ticketService;
-    @Autowired
+     @Autowired
     private BookService bookService;
 
     // Index page
@@ -54,7 +40,6 @@ public class AuthenController {
         String name = (String) session.getAttribute("name");
         model.addAttribute("name", name);
         model.addAttribute("totalMember",memberService.countMember());
-        model.addAttribute("totalTicket",ticketService.getTotalTickets());
         model.addAttribute("totalBooks",bookService.getTotalBooks());
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String userRole = authentication.getAuthorities().iterator().next().getAuthority();

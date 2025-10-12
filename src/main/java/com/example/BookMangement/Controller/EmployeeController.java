@@ -125,7 +125,7 @@ public class EmployeeController {
     }
     //new employee
     @PostMapping("/admin/save-user")
-    public String saveUser(HttpSession session, Model model, @Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes, @RequestParam("roles") List<Long> roleIds) {
+    public String saveUser(HttpSession session, Model model,  @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes, @RequestParam("roles") List<Long> roleIds) {
         if (bindingResult.hasErrors()) {
             return "Employee/new-employee";
         }

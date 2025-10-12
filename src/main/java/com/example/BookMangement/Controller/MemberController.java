@@ -105,7 +105,7 @@ public class MemberController {
         return "redirect:/member/";
     }
     @PostMapping("/save-member")
-    public String save(HttpSession session, Model model, @Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes, @RequestParam("roles") List<Long> roleIds) {
+    public String save(HttpSession session, Model model,  @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes, @RequestParam("roles") List<Long> roleIds) {
         if (bindingResult.hasErrors()) {
             return "Member/new-member";
         }
