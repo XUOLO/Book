@@ -14,6 +14,9 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * fff
  *
@@ -31,10 +34,13 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         // Lấy role của người dùng
         Collection<GrantedAuthority> authorities = (Collection<GrantedAuthority>) authentication.getAuthorities();
         String username = authentication.getName();
-
+        List<String> roles = authorities.stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.toList());
         User user = userService.findByUsername(username);
 
-            String redirectUrl  = "/";;
+            String redirectUrl  = "/";
+            if(roles.contains("ADMIN")) redirectUrl = "/authen";
             request.getSession().setAttribute("username", username);
             request.getSession().setAttribute("user", user );
             request.getSession().setAttribute("name", user.getName());

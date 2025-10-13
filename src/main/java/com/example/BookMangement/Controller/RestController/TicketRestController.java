@@ -49,8 +49,7 @@ public class TicketRestController {
 
     @GetMapping("/itemCount")
     public int getCartItemCount() {
-        int itemCount = listTicketService.getCount();
-        return itemCount;
+        return listTicketService.getCount();
     }
     @GetMapping("/remove/{id}")
     public void removeItem(@PathVariable("id") int id){

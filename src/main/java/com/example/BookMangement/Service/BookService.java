@@ -21,4 +21,6 @@ public interface BookService {
 
     public List<Book> searchBook(String keyword);
     public long getTotalBooks();
+
+    List<Book> getAll();
 }

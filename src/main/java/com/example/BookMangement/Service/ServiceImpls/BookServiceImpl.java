@@ -56,5 +56,10 @@ public class BookServiceImpl implements BookService {
         return bookRepository.count();
     }
 
+    @Override
+    public List<Book> getAll() {
+        return bookRepository.findAll();
+    }
+
 
 }

@@ -11,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -23,6 +24,8 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.sql.Blob;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -78,6 +81,8 @@ public class Book {
     @Column(name = "IS_DELETE")
     private Boolean isDelete;
 
+    private String categoryIds;
+
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "book_bookcategory",
@@ -101,4 +106,6 @@ public class Book {
         this.authors.clear();
     }
 
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<BookImage> images = new ArrayList<>();
 }

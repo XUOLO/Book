@@ -1,5 +1,7 @@
 package com.example.BookMangement.Controller;
 
+import com.example.BookMangement.Entity.Book;
+import com.example.BookMangement.Repository.BookCategoryRepository;
 import com.example.BookMangement.Repository.RoleRepository;
 import com.example.BookMangement.Repository.UserRepository;
 import com.example.BookMangement.Service.BookService;
@@ -14,6 +16,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.security.Principal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author xuanl
@@ -34,17 +38,42 @@ public class AuthenController {
      @Autowired
     private BookService bookService;
 
+    @Autowired
+    private BookCategoryRepository bookCategoryRepository;
+
     // Index page
     @GetMapping("/")
     public String indexPage(HttpSession session, Model model) {
+        // String name = (String) session.getAttribute("name");
+        // model.addAttribute("name", name);
+        // model.addAttribute("totalMember",memberService.countMember());
+        List<Book> listProduct =  bookService.getAll();
+
+        for (Book p : listProduct) {
+            String ids = p.getBookCategories().stream()
+                    .map(b -> "cat" + b.getId())
+                    .collect(Collectors.joining(" "));
+            p.setCategoryIds(ids); // ví dụ "cat1 cat2"
+        }
+        model.addAttribute("listBookCategories", bookCategoryRepository.findAll());
+
+        model.addAttribute("listProduct", listProduct);
+
+        // Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        // String userRole = authentication.getAuthorities().iterator().next().getAuthority();
+        // model.addAttribute("userRole", userRole);
+        return "index";
+    }
+
+    @GetMapping("/authen")
+    public String indexAdminPage(HttpSession session, Model model) {
         String name = (String) session.getAttribute("name");
         model.addAttribute("name", name);
         model.addAttribute("totalMember",memberService.countMember());
-        model.addAttribute("totalBooks",bookService.getTotalBooks());
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String userRole = authentication.getAuthorities().iterator().next().getAuthority();
         model.addAttribute("userRole", userRole);
-        return "index";
+        return "Authen/index";
     }
 
     // Not have permission page
@@ -60,7 +89,7 @@ public class AuthenController {
     public String loginPage(Principal principal) {
         boolean isAuthenticated = principal != null;
         if (isAuthenticated) {
-            return "redirect:/";
+            return "redirect:/authen";
         }
         return "Authen/login";
     }

@@ -47,13 +47,16 @@ public class SecurityConfig {
         http.csrf().disable()
                 .authorizeHttpRequests((authorize) ->
                         authorize
-                                 .requestMatchers("/**").permitAll()
-//                                .requestMatchers("/").hasAnyAuthority("ADMIN","EMPLOYEE")
-//                                .requestMatchers("/admin/**").hasAuthority("ADMIN")
-//                                .requestMatchers("/employee/**").hasAuthority("ADMIN")
-                                .requestMatchers("/admin/assets/**").permitAll()
-
-                                .anyRequest().authenticated()
+                               //  .requestMatchers("/login/**").permitAll()
+                               // // .requestMatchers("/admin/**").hasAuthority("ADMIN")
+                               // .requestMatchers("/book-category/**").hasAuthority("ADMIN")
+                               // .requestMatchers("/book/**").hasAuthority("ADMIN")
+                               // .requestMatchers("/authen/**").hasAuthority("ADMIN")
+                               // .requestMatchers("/author/**").hasAuthority("ADMIN")
+                               // .requestMatchers("/member/**").hasAuthority("ADMIN")
+                               // .requestMatchers("/employee/**").hasAuthority("ADMIN")
+                                // .requestMatchers("/admin/assets/**").permitAll()
+                                .anyRequest().permitAll()
 
 
 
@@ -61,7 +64,7 @@ public class SecurityConfig {
                         form -> form
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
-                                .defaultSuccessUrl("/")
+                                .defaultSuccessUrl("/authen")
                                 .successHandler(loginSuccessHandler)
                                 .permitAll()
                 ).logout(

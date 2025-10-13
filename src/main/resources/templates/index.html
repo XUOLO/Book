@@ -1,623 +1,522 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="vi">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="description" content="Bánh kẹo Sài Gòn - Cửa hàng bánh kẹo chất lượng, giao hàng nhanh">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bánh kẹo Sài Gòn</title>
 
-  <title>Book Management</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="/admin/assets/img/favicon.png" rel="icon">
-  <link href="/admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/admin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/admin/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="/admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="/admin/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="/admin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="/admin/assets/css/style.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-          integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/user/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/style.css" type="text/css">
 </head>
 
 <body>
+<!--     Page Preloder-->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
 
-<!-- ======= Header ======= -->
-<header id="header" class="header fixed-top d-flex align-items-center">
-
-  <div class="d-flex align-items-center justify-content-between">
-    <a href="/" class="logo d-flex align-items-center">
-      <img src="/admin/assets/img/logo.png" alt="">
-      <span class="d-none d-lg-block">Book Management</span>
-    </a>
-    <i class="bi bi-list toggle-sidebar-btn"></i>
-  </div><!-- End Logo -->
-
-
-
-  <nav class="header-nav ms-auto">
-    <ul class="d-flex align-items-center">
-
-      <li class="nav-item d-block d-lg-none">
-        <a class="nav-link nav-icon search-bar-toggle " href="#">
-          <i class="bi bi-search"></i>
-        </a>
-      </li><!-- End Search Icon-->
-
-      <li class="nav-item dropdown">
-
-        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-          <i class="bi bi-bell"></i>
-          <span class="badge bg-primary badge-number">4</span>
-        </a><!-- End Notification Icon -->
-
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-          <li class="dropdown-header">
-            You have 4 new notifications
-            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-exclamation-circle text-warning"></i>
-            <div>
-              <h4>Lorem Ipsum</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>30 min. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-x-circle text-danger"></i>
-            <div>
-              <h4>Atque rerum nesciunt</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>1 hr. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-check-circle text-success"></i>
-            <div>
-              <h4>Sit rerum fuga</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>2 hrs. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="notification-item">
-            <i class="bi bi-info-circle text-primary"></i>
-            <div>
-              <h4>Dicta reprehenderit</h4>
-              <p>Quae dolorem earum veritatis oditseno</p>
-              <p>4 hrs. ago</p>
-            </div>
-          </li>
-
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li class="dropdown-footer">
-            <a href="#">Show all notifications</a>
-          </li>
-
-        </ul><!-- End Notification Dropdown Items -->
-
-      </li><!-- End Notification Nav -->
-
-      <li class="nav-item dropdown">
-
-        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-          <i class="bi bi-chat-left-text"></i>
-          <span class="badge bg-success badge-number">3</span>
-        </a><!-- End Messages Icon -->
-
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-          <li class="dropdown-header">
-            You have 3 new messages
-            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="message-item">
-            <a href="#">
-              <img src="/admin/assets/img/messages-1.jpg" alt="" class="rounded-circle">
-              <div>
-                <h4>Maria Hudson</h4>
-                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="message-item">
-            <a href="#">
-              <img src="/admin/assets/img/messages-2.jpg" alt="" class="rounded-circle">
-              <div>
-                <h4>Anna Nelson</h4>
-                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                <p>6 hrs. ago</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="message-item">
-            <a href="#">
-              <img src="/admin/assets/img/messages-3.jpg" alt="" class="rounded-circle">
-              <div>
-                <h4>David Muldon</h4>
-                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                <p>8 hrs. ago</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li class="dropdown-footer">
-            <a href="#">Show all messages</a>
-          </li>
-
-        </ul><!-- End Messages Dropdown Items -->
-
-      </li><!-- End Messages Nav -->
-
-      <li class="nav-item dropdown pe-3">
-
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-
-          <span class="d-none d-md-block dropdown-toggle ps-2" th:text="${name}">K. Anderson</span>
-        </a><!-- End Profile Iamge Icon -->
-
-        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-          <li class="dropdown-header">
-            <h6>Kevin Anderson</h6>
-            <span>Web Designer</span>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li>
-            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-              <i class="bi bi-person"></i>
-              <span>My Profile</span>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li>
-            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-              <i class="bi bi-gear"></i>
-              <span>Account Settings</span>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li>
-            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-              <i class="bi bi-question-circle"></i>
-              <span>Need Help?</span>
-            </a>
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-
-          <li>
-            <a class="dropdown-item d-flex align-items-center" href="/logout">
-              <i class="bi bi-box-arrow-right"></i>
-              <span>Sign Out</span>
-            </a>
-          </li>
-
-        </ul><!-- End Profile Dropdown Items -->
-      </li><!-- End Profile Nav -->
-
-    </ul>
-  </nav><!-- End Icons Navigation -->
-
-</header><!-- End Header -->
-
-<!-- ======= Sidebar ======= -->
-<aside id="sidebar" class="sidebar">
-  <ul class="sidebar-nav" id="sidebar-nav">
-    <li class="nav-item">
-      <a class="nav-link " href="/">
-        <i class="bi bi-grid"></i>
-        <span>Dashboard</span>
-      </a>
-    </li><!-- End Dashboard Nav -->
-
-    <li class="nav-item" th:if="${userRole == 'ADMIN'}">
-      <a class="nav-link collapsed" href="/employee/">
-        <i class="bi bi-person"></i>
-        <span>Employee</span>
-      </a>
-    </li><!-- End Profile Page Nav -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="/author/">
-        <i class="ri-user-star-fill"></i>
-        <span>Nhà sản xuất</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="/book-category/">
-        <i class="ri-book-read-fill"></i>
-        <span>Danh mục sản phẩm</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="/book/">
-        <i class="bi bi-book"></i>
-        <span>Sản phẩm</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="/member/">
-        <i class="bi bi-person-plus"></i>
-        <span>Member</span>
-      </a>
-    </li>
-
-  </ul>
-</aside><!-- End Sidebar-->
-
-  <main id="main" class="main" layout:fragment="main">
-    <!-- Books Card -->
-    <section class="section dashboard">
-      <div class="row">
-    <div class="col-xxl-4 col-md-6">
-      <div class="card info-card sales-card">
-        <div class="filter">
-          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-            <li class="dropdown-header text-start">
-              <h6>Filter</h6>
-            </li>
-            <li><a class="dropdown-item" href="#">Today</a></li>
-            <li><a class="dropdown-item" href="#">This Month</a></li>
-            <li><a class="dropdown-item" href="#">This Year</a></li>
-          </ul>
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+      <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+            <a href="#"><img src="/user/img/logo.png" alt="Logo Bánh kẹo Sài Gòn" loading="lazy"></a>
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Books <span>| Total</span></h5>
-          <div class="d-flex align-items-center">
-            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-              <i class="bi bi-book-half"></i>
-            </div>
-            <div class="ps-3">
-              <h6 th:text="${totalBooks}" id="total-book">0</h6>
-             </div>
-          </div>
+        <div class="humberger__menu__cart">
+            
         </div>
-      </div>
-    </div><!-- End Books Card -->
-
-    <!-- Tickets Card -->
-    <div class="col-xxl-4 col-md-6">
-      <div class="card info-card revenue-card">
-        <div class="filter">
-          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-            <li class="dropdown-header text-start">
-              <h6>Filter</h6>
-            </li>
-            <li><a class="dropdown-item" href="#">Today</a></li>
-            <li><a class="dropdown-item" href="#">This Month</a></li>
-            <li><a class="dropdown-item" href="#">This Year</a></li>
-          </ul>
+        <div class="humberger__menu__widget">
+        
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Tickets <span>| Total</span></h5>
-          <div class="d-flex align-items-center">
-            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-              <i class="bi bi-layout-sidebar-inset"></i>
-            </div>
-            <div class="ps-3">
-              <h6 th:text="${totalTicket}" id="total-ticket">$0</h6>
-             </div>
-          </div>
+        <nav class="humberger__menu__nav mobile-menu">
+            <ul>
+                <li class="active"><a href="/">Trang chủ</a></li>
+                <li><a href="/shop-grid">Cửa hàng</a></li>
+                <li><a href="/contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="header__top__right__social">
+           
         </div>
-      </div>
-    </div><!-- End Tickets Card -->
-
-    <!-- Members Card -->
-    <div class="col-xxl-4 col-xl-12">
-      <div class="card info-card customers-card">
-        <div class="filter">
-          <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-            <li class="dropdown-header text-start">
-              <h6>Filter</h6>
-            </li>
-            <li><a class="dropdown-item" href="#">Today</a></li>
-            <li><a class="dropdown-item" href="#">This Month</a></li>
-            <li><a class="dropdown-item" href="#">This Year</a></li>
-          </ul>
+        <div class="humberger__menu__contact">
+            
         </div>
-        <div class="card-body">
-          <h5 class="card-title" >Members <span>| Total</span></h5>
-          <div class="d-flex align-items-center">
-            <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-              <i class="bi bi-people"></i>
-            </div>
-            <div class="ps-3">
-              <h6 th:text="${totalMember}" id="total-member"></h6>
-             </div>
-          </div>
+    </div>
+    <!-- Humberger End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+             
         </div>
-      </div>
-    </div><!-- End Members Card -->
-
-        <!-- Website Traffic -->
-        <div class="card">
-
-
-          <div class="card-body pb-0">
-            <h5 class="card-title">Statistics  </h5>
-
-            <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
-
-            <script>
-
-              document.addEventListener("DOMContentLoaded", () => {
-               const totalMemberElement = document.getElementById('total-member');
-               const totalMember = parseInt(totalMemberElement.textContent);
-
-               const ticketElement = document.getElementById('total-ticket');
-               const totalTicket = parseInt(ticketElement.textContent);
-
-               const totalBookElement = document.getElementById('total-book');
-               const totalBook = parseInt(totalBookElement.textContent);
-
-                echarts.init(document.querySelector("#trafficChart")).setOption({
-                  tooltip: {
-                    trigger: 'item'
-                  },
-                  legend: {
-                    top: '5%',
-                    left: 'center'
-                  },
-                  series: [{
-                    name: 'Access From',
-                    type: 'pie',
-                    radius: ['40%', '70%'],
-                    avoidLabelOverlap: false,
-                    label: {
-                      show: false,
-                      position: 'center'
-                    },
-                    emphasis: {
-                      label: {
-                        show: true,
-                        fontSize: '18',
-                        fontWeight: 'bold'
-                      }
-                    },
-                    labelLine: {
-                      show: false
-                    },
-                    data: [
-
-                      {
-                        value: totalTicket,
-                        name: 'Ticket'
-                      },
-                      {
-                        value: totalBook,
-                        name: 'Book'
-                      },
-                      {
-                        value: totalMember,
-                        name: 'Total Member'
-                      }
-                    ]
-                  }]
-                });
-              });
-            </script>
-
-          </div>
-        </div><!-- End Website Traffic -->
-
-
-
-        <div id="quantity-display"></div>
-        <script>
-<!--          $(document).ready(function () {-->
-
-<!--$.ajax({-->
-<!--url: "http://localhost:8080/api/v1/list-ticket/ticket-date",-->
-<!--type: "GET",-->
-<!--success: function (dataTicket) {-->
-
-<!--   const getData = JSON.stringify(dataTicket);-->
-<!--   alert(dataTicket.quantity);-->
-
-
-
-<!--          },-->
-<!--          error: function (xhr, status, error) {-->
-<!--            console.error("Error fetching data from the API:", error);-->
-<!--          }-->
-<!--        });-->
-<!--      });-->
-        </script>
-        <div id="data-container"></div>
-        <!-- Reports -->
-        <div class="col-12">
-          <div class="card">
-
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="/"><img src="/user/img/logo.png" alt="Logo Bánh kẹo Sài Gòn" loading="lazy"></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="/">Trang chủ</a></li>
+                            <li><a href="/shop-grid">Cửa hàng</a></li>
+                            
+                            <li><a href="/contact">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    
+                </div>
             </div>
-
-            <div class="card-body">
-              <h5 class="card-title">Reports <span>/Today</span></h5>
-
-              <!-- Line Chart -->
-              <div id="reportsChart"></div>
-
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:8080/api/v1/list-ticket/ticket-date")
-    .then(response => response.json())
-    .then(data => {
-      const dataArray = Object.values(data.quantity);
-      const dataArrayTakeDate = Object.values(data.takeDate);
-<!--      const dataArrayTotalMember = Object.values(data.totalMember);-->
-<!--      const dataArrayCreateDate = Object.values(data.createDate);-->
-      new ApexCharts(document.querySelector("#reportsChart"), {
-        series: [{
-                  name: 'Ticket',
-                       data: dataArray,
-                     }
-<!--                     ,-->
-<!--                      {-->
-<!--                       name: 'Member',-->
-<!--                       data: dataArrayTotalMember-->
-<!--                     }-->
-<!--                     , {-->
-<!--                       name: 'Customers',-->
-<!--                       data: [15, 11, 32, 18, 9, 24, 11]-->
-<!--                     }-->
-                     ],
-
-        chart: {
-                       height: 350,
-                       type: 'area',
-                       toolbar: {
-                         show: false
-                       },
-                     },
-                     markers: {
-                       size: 4
-                     },
-                     colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                     fill: {
-                       type: "gradient",
-                       gradient: {
-                         shadeIntensity: 1,
-                         opacityFrom: 0.3,
-                         opacityTo: 0.4,
-                         stops: [0, 90, 100]
-                       }
-                     },
-                     dataLabels: {
-                       enabled: false
-                     },
-                     stroke: {
-                       curve: 'smooth',
-                       width: 2
-                     },
-                     xaxis: {
-                       type: 'date',
-                       categories:  dataArrayTakeDate
-                     },
-                     tooltip: {
-                       x: {
-                         format: 'dd/MM/yy'
-                       },
-                     }
-
-
-      }).render();
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-});
-
-              </script>
-              <!-- End Line Chart -->
-
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
             </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
 
-          </div>
-        </div><!-- End Reports -->
-
-      </div>
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Danh mục</span>
+                        </div>
+                        <ul>
+                            <li><a href="#">Mẫu Bánh Kẹo Hộp Quà</a></li>
+                            <li><a href="#">Mẫu Bánh Kẹo Cơ Bản</a></li>
+                            <li><a href="#">Nguyên Thùng (chưa đóng gói lẻ)</a></li>
+                            <li><a href="#">Kẹo Đồ Chơi Trẻ Em</a></li>
+                            <li><a href="#">Nguyên Liệu Pha chế</a></li>
+                            <li><a href="#">Phụ Kiện Gói Quà</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>0906170760</h5>
+                                <span>Hỗ trợ 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__item set-bg" data-setbg="/user/img/hero/banner.jpg">
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
+    <!-- Hero Section End -->
 
-<!-- End #main -->
+    <!-- Categories Section Begin -->
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="categories__slider owl-carousel">
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="user/img/categories/cat-1.jpg">
+                            <h5><a href="#">Trái cây tươi</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="user/img/categories/cat-2.jpg">
+                            <h5><a href="#">Trái cây sấy</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="user/img/categories/cat-3.jpg">
+                            <h5><a href="#">Rau củ</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="user/img/categories/cat-4.jpg">
+                            <h5><a href="#">drink fruits</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="user/img/categories/cat-5.jpg">
+                            <h5><a href="#">Nước ép trái cây</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
+    <!-- Featured Section Begin -->
+    <section class="featured spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Sản phẩm nổi bật</h2>
+                    </div>
+                    <div class="featured__controls">
+                        <ul>
+                            <li class="active" data-filter="*">Tất cả</li>
+                            <li th:each="list : ${listBookCategories}"
+                                th:data-filter="'.cat'+${list.id}"
+                                th:text="${list.title}">Category</li>
+                        </ul>
+                    </div>
 
-</footer><!-- End Footer -->
+                </div>
+            </div>
+            <div class="row featured__filter"th:each="list,index : ${listProduct}">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mix"
+                         th:classappend="${list.categoryIds}">
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+                    <div class="featured__item">
+                        <div class="featured__item__pic" th:style="'background-image: url(' + ${list.image} + ');'">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#" th:text="${list.title}">Tên sản phẩm</a></h6>
+                            <h5>Liên hệ</h5>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Vendor JS Files -->
-<script src="/admin/assets/vendor/apexcharts/apexcharts.min.js"></script>
-<script src="/admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/admin/assets/vendor/chart.js/chart.umd.js"></script>
-<script src="/admin/assets/vendor/echarts/echarts.min.js"></script>
-<script src="/admin/assets/vendor/quill/quill.js"></script>
-<script src="/admin/assets/vendor/simple-datatables/simple-datatables.js"></script>
-<script src="/admin/assets/vendor/tinymce/tinymce.min.js"></script>
-<script src="/admin/assets/vendor/php-email-form/validate.js"></script>
 
-<!-- Template Main JS File -->
-<script src="/admin/assets/js/main.js"></script>
+
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
+
+    <!-- Banner Begin -->
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="banner__pic">
+                        <img src="/user/img/banner/banner-1.jpg" alt="Banner khuyến mãi 1 - Bánh kẹo Sài Gòn" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="banner__pic">
+                        <img src="/user/img/banner/banner-2.jpg" alt="Banner khuyến mãi 2 - Bánh kẹo Sài Gòn" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner End -->
+
+    <!-- Latest Product Section Begin -->
+    <section class="latest-product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Sản phẩm mới nhất</h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-1.jpg" alt="Sản phẩm mới 1" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-2.jpg" alt="Sản phẩm mới 2" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-3.jpg" alt="Sản phẩm mới 3" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-1.jpg" alt="Sản phẩm mới 1" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-2.jpg" alt="Sản phẩm mới 2" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-3.jpg" alt="Sản phẩm mới 3" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Sản phẩm được đánh giá cao</h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-1.jpg" alt="Sản phẩm mới 4" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-2.jpg" alt="Sản phẩm mới 5" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-3.jpg" alt="Sản phẩm mới 6" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-1.jpg" alt="Sản phẩm mới 1" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-2.jpg" alt="Sản phẩm mới 2" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-3.jpg" alt="Sản phẩm mới 3" loading="lazy">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Sản phẩm đánh giá</h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-1.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-2.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-3.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Bảo vệ hồ cua</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-1.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Crab Pool Security</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-2.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Crab Pool Security</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="/user/img/latest-product/lp-3.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Crab Pool Security</h6>
+                                        <span>Liên hệ</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest Product Section End -->
+
+    <!-- Blog Section Begin -->
+   
+    <!-- Blog Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="/"><img src="/user/img/logo.png" alt="Logo Bánh kẹo Sài Gòn" loading="lazy"></a>
+                        </div>
+                        <ul>
+                            <li>Địa chỉ: 4H1 Đường 52 KDC Tân Quy Đông, Tân Phong, Quận 7. HCM</li>
+                            <li>Điện thoại: 0906170760</li>
+                            <li>Email: hello@colorlib.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Liên kết hữu ích</h6>
+                        <ul>
+                            <li><a href="#">Về chúng tôi</a></li>
+                            <li><a href="#">Về cửa hàng</a></li>
+                            <li><a href="#">Mua sắm an toàn</a></li>
+                            <li><a href="#">Thông tin giao hàng</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Sơ đồ trang</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Chúng tôi là ai</a></li>
+                            <li><a href="#">Dịch vụ</a></li>
+                            <li><a href="#">Dự án</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#">Sáng tạo</a></li>
+                            <li><a href="#">Khách hàng nói gì</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Đăng ký nhận tin</h6>
+                        <p>Nhận email cập nhật về cửa hàng và ưu đãi mới nhất.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Nhập email của bạn">
+                            <button type="submit" class="site-btn">Đăng ký</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="https://www.facebook.com/share/1Avf2Aaj8f/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <!-- Đã xoá copyright -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="user/js/jquery-3.3.1.min.js"></script>
+    <script src="user/js/bootstrap.min.js"></script>
+    <script src="user/js/jquery.nice-select.min.js"></script>
+    <script src="user/js/jquery-ui.min.js"></script>
+    <script src="user/js/jquery.slicknav.js"></script>
+    <script src="user/js/mixitup.min.js"></script>
+    <script src="user/js/owl.carousel.min.js"></script>
+    <script src="user/js/main.js"></script>
+
+
 
 </body>
 

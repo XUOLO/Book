@@ -1,13 +1,17 @@
 package com.example.BookMangement.Controller;
 
+import com.cloudinary.utils.ObjectUtils;
 import com.example.BookMangement.Entity.Author;
 import com.example.BookMangement.Entity.Book;
 import com.example.BookMangement.Entity.BookCategory;
+import com.example.BookMangement.Entity.BookImage;
 import com.example.BookMangement.Repository.AuthorRepository;
 import com.example.BookMangement.Repository.BookCategoryRepository;
+import com.example.BookMangement.Repository.BookImageRepository;
 import com.example.BookMangement.Repository.BookRepository;
 import com.example.BookMangement.Repository.UserRepository;
 import com.example.BookMangement.Service.BookService;
+import com.example.BookMangement.Service.ServiceImpls.CloudinaryService;
 import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -35,8 +39,10 @@ import java.io.IOException;
 import java.sql.Blob;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -60,6 +66,10 @@ public class BookController {
     private BookCategoryRepository bookCategoryRepository;
     @Autowired
     private AuthorRepository authorRepository;
+    @Autowired
+    private CloudinaryService cloudinaryService;
+    @Autowired
+    private BookImageRepository bookImageRepository;
 
     @GetMapping("/new-book")
     public String showNewEmployeeForm(Model model, HttpSession session) {
@@ -107,14 +117,14 @@ public class BookController {
     @GetMapping("/delete-book/{id}")
     public String deleteEmployee(@PathVariable(value = "id") long id) {
         Book book = bookService.getBookById(id);
-        book.setIsDelete(true);
-        bookRepository.save(book);
+        // book.setIsDelete(true);
+        bookRepository.delete(book);
         return "redirect:/book/";
     }
 
 
     @PostMapping("/save-book")
-    public String saveBook(HttpSession session,  @ModelAttribute("book") Book book, BindingResult bindingResult, RedirectAttributes redirectAttributes,  Model model) {
+    public String saveBook(HttpSession session, @RequestParam("image") MultipartFile imageFile,@RequestParam("images") List<MultipartFile> imageFiles, @ModelAttribute("book") Book book, BindingResult bindingResult, RedirectAttributes redirectAttributes,  Model model) throws IOException {
 
 
         String name = (String) session.getAttribute("name");
@@ -124,7 +134,22 @@ public class BookController {
         book.setUpdateDate(LocalDate.now());
         book.setUpdateBy(name);
         book.setIsDelete(false);
+        String imageUrl = cloudinaryService.uploadFile(imageFile);
+        book.setImage(imageUrl); // Lưu URL vào DB
+
+        List<BookImage> images = new ArrayList<>();
+        for (MultipartFile file : imageFiles) {
+            if (!file.isEmpty()) {
+                String imagesUrl = cloudinaryService.uploadFile(file);
+                BookImage pi = new BookImage();
+                pi.setImage(imagesUrl);
+                pi.setBook(book);
+                images.add(pi);
+            }
+        }
+        book.setImages(images);
         bookRepository.save(book);
+
         redirectAttributes.addFlashAttribute("newBookSuccess", "Success add new book !");
         return "redirect:/book/new-book";
     }
