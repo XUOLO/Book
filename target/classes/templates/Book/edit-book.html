@@ -336,10 +336,25 @@
                         <span class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
                     </div>
                 </div>
+
+                <div class="row mb-3">
+                    <label for="shortDescription" class="col-sm-2 col-form-label">Mô tả ngắn</label>
+                    <div class="col-sm-10">
+                        <input type="text"  id="shortDescription" required  oninvalid="this.setCustomValidity('Your shortDescription is required')" name="shortDescription" onchange="this.setCustomValidity('')"  th:field="*{shortDescription}" class="form-control">
+                        <span class="text-danger" th:if="${#fields.hasErrors('shortDescription')}" th:errors="*{shortDescription}"></span>
+                    </div>
+                </div>
+
                 <div class="row mb-3">
                     <label for="description" class="col-sm-2 col-form-label">Mô tả</label>
                     <div class="col-sm-10">
-                        <input type="text"  id="description" required  oninvalid="this.setCustomValidity('Your description is required')" name="description" onchange="this.setCustomValidity('')"  th:field="*{description}" class="form-control">
+                        <textarea id="description" required
+                                  oninvalid="this.setCustomValidity('Your description is required')"
+                                  name="description"
+                                  onchange="this.setCustomValidity('')"
+                                  th:field="*{description}"
+                                  class="form-control"
+                                  rows="6"></textarea>
                         <span class="text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
                     </div>
                 </div>
@@ -364,17 +379,17 @@
                 <div class="row mb-3">
                     <label for="image" class="col-sm-2 col-form-label">Image</label>
                     <div class="col-sm-10">
-                        <input type="text"  id="image" name="updateDate"  th:field="*{image}" class="form-control">
+                        <input type="text"  id="image" name="image"  th:field="*{image}" class="form-control">
                     </div>
                 </div>
-                <div class="row mb-3" th:each="img, iterStat : ${book.images}">
-                    <label for="image" class="col-sm-2 col-form-label">Images</label>
+                <div class="row mb-3" th:each="img : ${book.images}">
+                    <label class="col-sm-2 col-form-label">Images</label>
                     <div class="col-sm-10">
-                        <input disabled type="text"
-                               th:field="*{images[__${iterStat.index}__].image}"
-                               class="form-control">
+                        <input type="text" class="form-control" th:value="${img.image}" readonly>
+                        <input type="hidden" name="images" th:value="${img.id}">
                     </div>
                 </div>
+
 
 
                 <div class="row mb-12">
@@ -498,7 +513,7 @@
                             </div>
 
                             <div class="btn-group"  role="group" aria-label="Basic outlined example">
-                                <button class="btn btn-primary w-100" onclick="return confirm('Continue?')" type="submit">Submit</button>
+                                <button class="btn btn-primary w-100" type="submit">Submit</button>
 
                             </div>
 

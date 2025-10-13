@@ -44,7 +44,7 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="/">Trang chủ</a></li>
-                <li><a href="/shop-grid">Cửa hàng</a></li>
+                <li><a href="/shop-grid">Sản phẩm</a></li>
                 <li><a href="/contact">Liên hệ</a></li>
             </ul>
         </nav>
@@ -74,7 +74,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="/">Trang chủ</a></li>
-                            <li><a href="/shop-grid">Cửa hàng</a></li>
+                            <li><a href="/shop-grid">Sản phẩm</a></li>
                             
                             <li><a href="/contact">Liên hệ</a></li>
                         </ul>
@@ -101,13 +101,8 @@
                             <i class="fa fa-bars"></i>
                             <span>Danh mục</span>
                         </div>
-                        <ul>
-                            <li><a href="#">Mẫu Bánh Kẹo Hộp Quà</a></li>
-                            <li><a href="#">Mẫu Bánh Kẹo Cơ Bản</a></li>
-                            <li><a href="#">Nguyên Thùng (chưa đóng gói lẻ)</a></li>
-                            <li><a href="#">Kẹo Đồ Chơi Trẻ Em</a></li>
-                            <li><a href="#">Nguyên Liệu Pha chế</a></li>
-                            <li><a href="#">Phụ Kiện Gói Quà</a></li>
+                        <ul th:each="list : ${listBookCategories}">
+                            <li th:text="${list.title}"></li>
                         </ul>
                     </div>
                 </div>
@@ -188,10 +183,10 @@
 
                 </div>
             </div>
-            <div class="row featured__filter"th:each="list,index : ${listProduct}">
-                    <div class="col-lg-3 col-md-4 col-sm-6 mix"
-                         th:classappend="${list.categoryIds}">
-
+            <div class="row featured__filter">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix"
+                     th:each="list,index : ${listProduct}"
+                     th:classappend="${list.categoryIds}">
                     <div class="featured__item">
                         <div class="featured__item__pic" th:style="'background-image: url(' + ${list.image} + ');'">
                             <ul class="featured__item__pic__hover">
@@ -201,15 +196,13 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#" th:text="${list.title}">Tên sản phẩm</a></h6>
+                            <h6><a th:href="@{'/product/detail/' + ${list.id}}" th:text="${list.title}">Tên sản phẩm</a></h6>
                             <h5>Liên hệ</h5>
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
+
         </div>
     </section>
     <!-- Featured Section End -->
@@ -239,7 +232,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Sản phẩm mới nhất</h4>
+                        <h4>🆕 Mới nhất</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
@@ -304,7 +297,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Sản phẩm được đánh giá cao</h4>
+                        <h4>🔥 Bán chạy</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">
@@ -369,7 +362,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="latest-product__text">
-                        <h4>Sản phẩm đánh giá</h4>
+                        <h4>⭐ Yêu thích</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
                                 <a href="#" class="latest-product__item">

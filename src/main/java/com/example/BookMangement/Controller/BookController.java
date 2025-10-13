@@ -155,15 +155,18 @@ public class BookController {
     }
 
     @PostMapping("/edit-book/edit")
-    public String editBook(HttpSession session, @ModelAttribute("book") Book book, BindingResult bindingResult, @RequestParam("bookCategories") List<Long> bookCategoryIds, RedirectAttributes redirectAttributes)  {
+    public String editBook(HttpSession session, @ModelAttribute("book") Book book, BindingResult bindingResult, @RequestParam("bookCategories") List<Long> bookCategoryIds,@RequestParam("images") List<Long> images, RedirectAttributes redirectAttributes)  {
         String nameLogin = (String) session.getAttribute("name");
         book.setUpdateBy(nameLogin);
         book.setUpdateDate(LocalDate.now());
         book.setIsDelete(book.getIsDelete());
         book.clearBookCategories();
+        book.clearBookImagess();
 //        book.clearAuthors();
 
         List<BookCategory> bookCategories = bookCategoryRepository.findAllById(bookCategoryIds);
+        List<BookImage> bookImagess = bookImageRepository.findAllById(images);
+        book.setImages(bookImagess);
         book.setBookCategories(new HashSet<>(bookCategories));
         bookRepository.save(book);
         redirectAttributes.addFlashAttribute("editBookSuccess", "Success edit book !");

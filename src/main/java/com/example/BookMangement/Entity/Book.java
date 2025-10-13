@@ -53,6 +53,9 @@ public class Book {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "short_description")
+    private String shortDescription;
+
 
     @Column(name = "quantity")
     private int quantity;
@@ -82,6 +85,7 @@ public class Book {
     private Boolean isDelete;
 
     private String categoryIds;
+    private String type;
 
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -100,6 +104,9 @@ public class Book {
 
     public void clearBookCategories() {
         this.bookCategories.clear();
+    }
+    public void clearBookImagess() {
+        this.images.clear();
     }
 
     public void clearAuthors() {

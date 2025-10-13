@@ -1,6 +1,8 @@
 package com.example.BookMangement.Controller;
 
+import com.example.BookMangement.Repository.BookCategoryRepository;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -18,8 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/shop-grid")
 public class ShopController {
+    @Autowired
+    private BookCategoryRepository bookCategoryRepository;
     @GetMapping()
     public String showListEmployee(Model model, HttpSession session) {
+        model.addAttribute("listBookCategories", bookCategoryRepository.findAll());
 
         return "shop-grid";
     }

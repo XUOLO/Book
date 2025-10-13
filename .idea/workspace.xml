@@ -5,196 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39508a07-5260-4786-ae3b-84561a749b17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/hotswap_agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/ContactController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/ProductDetailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/ShopController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Entity/BookImage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Repository/BookImageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Service/ServiceImpls/CloudinaryConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Service/ServiceImpls/CloudinaryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/Source/OwlCarousel2-2.3.4.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/Source/SlickNav-master.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/Source/bootstrap-4.4.1-dist.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/Source/font-awesome-4.7.0.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/Source/jquery-nice-select-1.1.0.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/Source/jquery-ui-1.12.1.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/Source/sass.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/elegant-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/nice-select.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/owl.carousel.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/slicknav.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/fonts/ElegantIcons.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/fonts/ElegantIcons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/fonts/ElegantIcons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/fonts/ElegantIcons.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/banner/banner-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/banner/banner-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/banner/banner-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/blog-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/blog-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/blog-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/blog-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/blog-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/blog-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/details/details-author.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/details/details-hero.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/details/details-pic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/sidebar/sr-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/sidebar/sr-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/blog/sidebar/sr-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/breadcrumb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/cart/cart-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/cart/cart-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/cart/cart-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/categories/cat-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/categories/cat-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/categories/cat-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/categories/cat-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/categories/cat-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/featured/feature-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/featured/feature-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/featured/feature-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/featured/feature-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/featured/feature-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/featured/feature-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/featured/feature-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/featured/feature-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/hero/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/language.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/latest-product/lp-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/latest-product/lp-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/latest-product/lp-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/payment-item.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/banh150g.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/banh375g.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/banh480g.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/details/product-details-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/details/product-details-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/details/product-details-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/details/product-details-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/details/product-details-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/details/thumb-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/details/thumb-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/details/thumb-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/details/thumb-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/discount/pd-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/discount/pd-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/discount/pd-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/discount/pd-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/discount/pd-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/discount/pd-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/product/product-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/js/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/js/jquery.nice-select.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/js/jquery.slicknav.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/js/mixitup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/js/owl.carousel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_base.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_blog-details.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_blog-sidebar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_blog.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_breadcrumb.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_checkout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_contact.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_hero.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_home-page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_responsive.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_shop-details.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_shop-grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_shoping-cart.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_sidebar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/_variable.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/user/sass/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Authen/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/shop-details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/shop-grid.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/AuthenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/AuthenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/RestController/TicketRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/RestController/TicketRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/ContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/ContactController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/ShopController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Security/LoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Security/LoginSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Service/ServiceImpls/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BookMangement/Service/ServiceImpls/BookServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Author/edit-author.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Author/edit-author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Author/list-keyword-author.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Author/list-keyword-author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Author/new-author.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Author/new-author.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/user/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/user/img/hero/banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/user/img/hero/banner.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Book/edit-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Book/edit-book.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Book/new-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Book/new-book.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/BookCategory/edit-book-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/BookCategory/edit-book-category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/BookCategory/list-keyword-book-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/BookCategory/list-keyword-book-category.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/BookCategory/new-book-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/BookCategory/new-book-category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Employee/edit-employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Employee/edit-employee.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Employee/new-employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Employee/new-employee.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Member/edit-member.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Member/edit-member.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Ticket/detail-ticket.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Ticket/detail-ticket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop-grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop-grid.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Controller/AuthenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Controller/AuthenController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Controller/BookController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Controller/RestController/TicketRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Controller/RestController/TicketRestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Controller/ContactController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Controller/ContactController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Controller/ShopController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Controller/ShopController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Entity/Author.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Entity/Author.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Entity/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Entity/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Entity/BookCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Entity/BookCategory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Entity/TicketItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Entity/TicketItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Security/LoginSuccessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Security/LoginSuccessHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Security/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/BookService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/ServiceImpls/AuthorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/ServiceImpls/AuthorServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/ServiceImpls/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/ServiceImpls/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/ServiceImpls/CustomUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/ServiceImpls/CustomUserDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/ServiceImpls/ListTicketImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/ServiceImpls/ListTicketImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/ServiceImpls/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/BookMangement/Service/ServiceImpls/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Author/edit-author.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Author/edit-author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Author/list-keyword-author.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Author/list-keyword-author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Author/new-author.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Author/new-author.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/user/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/user/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/user/img/hero/banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/user/img/hero/banner.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/Book/edit-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Book/edit-book.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/Book/new-book.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Book/new-book.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/BookCategory/edit-book-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/BookCategory/edit-book-category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/BookCategory/list-keyword-book-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/BookCategory/list-keyword-book-category.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/BookCategory/new-book-category.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/BookCategory/new-book-category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Employee/edit-employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Employee/edit-employee.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Employee/new-employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Employee/new-employee.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Member/edit-member.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Member/edit-member.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Ticket/detail-ticket.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Ticket/detail-ticket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop-grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop-grid.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +79,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/loctx/Desktop/book/src/main/resources/templates",
+    "last_opened_file_path": "C:/Users/Admin/Desktop/Book/src/main/resources/static/user/img/hero",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -249,9 +94,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\Book\src\main\resources\static\user\img\hero" />
       <recent name="C:\Users\loctx\Desktop\book\src\main\resources\static\user" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Desktop\Book\src\main\resources\static\user\img\hero" />
       <recent name="C:\Users\loctx\Desktop\book\src\main\resources\templates" />
       <recent name="C:\Users\loctx\Desktop\book\src\main\resources\templates\Authen" />
       <recent name="C:\Users\loctx\Desktop\book\src\main\resources\static\admin" />
@@ -329,17 +176,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/BookController.java</url>
-          <line>126</line>
-          <properties class="com.example.BookMangement.Controller.BookController" method="saveBook">
+          <line>157</line>
+          <properties class="com.example.BookMangement.Controller.BookController" method="editBook">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="9" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/BookMangement/Controller/BookController.java</url>
-          <line>136</line>
-          <option name="timeStamp" value="8" />
+          <line>129</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

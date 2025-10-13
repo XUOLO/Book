@@ -44,7 +44,7 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="/">Trang chủ</a></li>
-                <li><a href="/shop-grid">Cửa hàng</a></li>
+                <li><a href="/shop-grid">Sản phẩm</a></li>
                 <li><a href="/contact">Liên hệ</a></li>
             </ul>
         </nav>
@@ -74,7 +74,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="/">Trang chủ</a></li>
-                            <li><a href="/shop-grid">Cửa hàng</a></li>
+                            <li><a href="/shop-grid">Sản phẩm</a></li>
 
                             <li><a href="/contact">Liên hệ</a></li>
                         </ul>
@@ -102,13 +102,11 @@
                             <span>Danh mục</span>
                         </div>
                         <ul>
-                            <li><a href="#">Mẫu Bánh Kẹo Hộp Quà</a></li>
-                            <li><a href="#">Mẫu Bánh Kẹo Cơ Bản</a></li>
-                            <li><a href="#">Nguyên Thùng (chưa đóng gói lẻ)</a></li>
-                            <li><a href="#">Kẹo Đồ Chơi Trẻ Em</a></li>
-                            <li><a href="#">Nguyên Liệu Pha chế</a></li>
-                            <li><a href="#">Phụ Kiện Gói Quà</a></li>
+                            <li th:each="list : ${listBookCategories}"
+                                th:text="${list.title}">
+                            </li>
                         </ul>
+
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -145,11 +143,11 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2 th:text="${book.title}" >Vegetable’s Package</h2>
+                        <h2 th:text="${book.title}" ></h2>
                         <div class="breadcrumb__option">
-<!--                            <a >Trang chủ </a>-->
-<!--                            <a th:text="${book.title}">Vegetables</a>-->
-<!--&lt;!&ndash;                            <span>Vegetable’s Package</span>&ndash;&gt;-->
+                            <a >Trang chủ </a>
+                            <a >Sản phẩm</a>
+                            <span th:text="${book.title}"></span>
                         </div>
                     </div>
                 </div>
@@ -188,10 +186,9 @@
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star-half-o"></i>
                         </div>
-                        <div class="product__details__price">Liên hệ</div>
-                        <p th:text="${book.description}">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
-                            vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
-                            quam vehicula elementum sed sit amet dui. Proin eget tortor risus.</p>
+                        <div class="product__details__price">
+                            <button class="btn btn-danger" style="background-color:#e53935;">Liên hệ</button>̣</div>
+                        <p th:text="${book.shortDescription}"></p>
                         <div class="product__details__quantity">
                             <div class="quantity">
 
@@ -210,6 +207,15 @@
 <!--                                </div>-->
 <!--                            </li>-->
                         </ul>
+                        <div class="buttons-contact" style="display: grid ;grid-template-columns: repeat(2, 1fr);grid-gap: 10px;">
+                            <a href="https://zalo.me/" target="_blank">
+                                <img src="/user/img/zalo.png" alt=""  loading="lazy">
+                            </a>
+                            <a href="https://fb.com/" target="_blank">
+                                <img src="/user/img/messenger.jpg" alt=""  loading="lazy">
+                            </a>
+
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -217,14 +223,15 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
-                                    aria-selected="true">Mô tả</a>
+                                    aria-selected="true">Thông tin chi tiết</a>
                             </li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__tab__desc">
-                                    <h6>Thông tin sản pẩm</h6>
-                                    <p th:text="${book.description}"> </p>
+                                    <h6><span style="margin-right: 5px;">📦</span> Thông tin sản pẩm</h6>
+                                    <p style="white-space: pre-line;" th:text="${book.description}"></p>
+
                                 </div>
                             </div>
                         </div>
