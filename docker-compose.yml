@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_2
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    command: ["postgres", "-c", "client_encoding=UTF8"]
+
+  app:
+    image: eclipse-temurin:17-jdk
+    container_name: spring_app
+    restart: always
+    depends_on:
+      - postgres
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    command: ["java", "-jar", "Banh.jar"]
+    ports:
+      - "8082:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 123456
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      CLOUDINARY_CLOUD_NAME: dmhodskr1
+      CLOUDINARY_API_KEY: 179271235675279
+      CLOUDINARY_API_SECRET: XUcCZNRFaksI3shButn4PnNJ1J4
