@@ -331,6 +331,14 @@
                         <span class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
                     </div>
                 </div>
+
+                <div class="row mb-3">
+                    <label for="type" class="col-sm-2 col-form-label">Loại</label>
+                    <div class="col-sm-10">
+                        <input type="text"  id="type"th:field="*{type}" class="form-control">
+                        <span class="text-danger" th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></span>
+                    </div>
+                </div>
                 <div class="row mb-3">
                     <label for="shortDescription" class="col-sm-2 col-form-label">Mô tả ngắn</label>
                     <div class="col-sm-10">
