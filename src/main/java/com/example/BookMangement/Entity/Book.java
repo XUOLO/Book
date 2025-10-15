@@ -95,13 +95,6 @@ public class Book {
     )
     private Set<BookCategory> bookCategories;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "book_author",
-            joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "author_id", referencedColumnName = "id")
-    )
-    private Set<Author> authors;
-
     public void clearBookCategories() {
         this.bookCategories.clear();
     }
@@ -109,9 +102,6 @@ public class Book {
         this.images.clear();
     }
 
-    public void clearAuthors() {
-        this.authors.clear();
-    }
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BookImage> images = new ArrayList<>();

@@ -1,11 +1,8 @@
 package com.example.BookMangement.Controller;
 
-import com.cloudinary.utils.ObjectUtils;
-import com.example.BookMangement.Entity.Author;
 import com.example.BookMangement.Entity.Book;
 import com.example.BookMangement.Entity.BookCategory;
 import com.example.BookMangement.Entity.BookImage;
-import com.example.BookMangement.Repository.AuthorRepository;
 import com.example.BookMangement.Repository.BookCategoryRepository;
 import com.example.BookMangement.Repository.BookImageRepository;
 import com.example.BookMangement.Repository.BookRepository;
@@ -13,16 +10,12 @@ import com.example.BookMangement.Repository.UserRepository;
 import com.example.BookMangement.Service.BookService;
 import com.example.BookMangement.Service.ServiceImpls.CloudinaryService;
 import jakarta.servlet.http.HttpSession;
-import jakarta.transaction.Transactional;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.CollectionUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -33,17 +26,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.sql.rowset.serial.SerialBlob;
-import javax.sql.rowset.serial.SerialException;
 import java.io.IOException;
-import java.sql.Blob;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 /**
  * BookController
@@ -65,8 +53,6 @@ public class BookController {
     @Autowired
     private BookCategoryRepository bookCategoryRepository;
     @Autowired
-    private AuthorRepository authorRepository;
-    @Autowired
     private CloudinaryService cloudinaryService;
     @Autowired
     private BookImageRepository bookImageRepository;
@@ -77,7 +63,6 @@ public class BookController {
         model.addAttribute("name", name);
         model.addAttribute("book", new Book());
         model.addAttribute("listBookCategories", bookCategoryRepository.findAll());
-        model.addAttribute("listAuthors", authorRepository.findAll());
 
         return "Book/new-book";
     }
@@ -99,12 +84,10 @@ public class BookController {
     public String showUpdateBookForm(@PathVariable("id") Long id, Model model, HttpSession session) {
         Book book = bookService.getBookById(id);
         List<BookCategory> bookCategoryList = bookCategoryRepository.findAll();
-        List<Author> authorList = authorRepository.findAll();
 
         model.addAttribute("book", book);
         model.addAttribute("updateDate", book.getUpdateDate());
         model.addAttribute("updateBy", book.getUpdateBy());
-        model.addAttribute("authorList", authorList);
         model.addAttribute("bookCategoryList", bookCategoryList);
         String nameLogin = (String) session.getAttribute("name");
         model.addAttribute("name", nameLogin);
@@ -155,18 +138,18 @@ public class BookController {
     }
 
     @PostMapping("/edit-book/edit")
-    public String editBook(HttpSession session, @ModelAttribute("book") Book book, BindingResult bindingResult, @RequestParam("bookCategories") List<Long> bookCategoryIds,@RequestParam("images") List<Long> images, RedirectAttributes redirectAttributes)  {
+    public String editBook(HttpSession session, @ModelAttribute("book") Book book, BindingResult bindingResult, @RequestParam("bookCategories") List<Long> bookCategoryIds,@RequestParam(value = "images", required = false) List<Long> images, RedirectAttributes redirectAttributes)  {
         String nameLogin = (String) session.getAttribute("name");
         book.setUpdateBy(nameLogin);
         book.setUpdateDate(LocalDate.now());
         book.setIsDelete(book.getIsDelete());
         book.clearBookCategories();
         book.clearBookImagess();
-//        book.clearAuthors();
-
         List<BookCategory> bookCategories = bookCategoryRepository.findAllById(bookCategoryIds);
-        List<BookImage> bookImagess = bookImageRepository.findAllById(images);
-        book.setImages(bookImagess);
+        if(!CollectionUtils.isEmpty(images)){
+            List<BookImage> bookImages = bookImageRepository.findAllById(images);
+            book.setImages(bookImages);
+        }
         book.setBookCategories(new HashSet<>(bookCategories));
         bookRepository.save(book);
         redirectAttributes.addFlashAttribute("editBookSuccess", "Success edit book !");

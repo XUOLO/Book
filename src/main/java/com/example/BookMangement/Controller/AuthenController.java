@@ -2,6 +2,7 @@ package com.example.BookMangement.Controller;
 
 import com.example.BookMangement.Entity.Book;
 import com.example.BookMangement.Repository.BookCategoryRepository;
+import com.example.BookMangement.Repository.BookRepository;
 import com.example.BookMangement.Repository.RoleRepository;
 import com.example.BookMangement.Repository.UserRepository;
 import com.example.BookMangement.Service.BookService;
@@ -39,6 +40,9 @@ public class AuthenController {
     private BookService bookService;
 
     @Autowired
+    private BookRepository bookRepository;
+
+    @Autowired
     private BookCategoryRepository bookCategoryRepository;
 
     // Index page
@@ -55,9 +59,23 @@ public class AuthenController {
                     .collect(Collectors.joining(" "));
             p.setCategoryIds(ids); // ví dụ "cat1 cat2"
         }
+        List<Book> bookNew = listProduct.stream()
+                .filter(b -> "1".equals(b.getType()))
+                .toList();
+
+        List<Book> bookBest = listProduct.stream()
+                .filter(b -> "2".equals(b.getType()))
+                .toList();
+
+        List<Book> bookLove = listProduct.stream()
+                .filter(b -> "3".equals(b.getType()))
+                .toList();
         model.addAttribute("listBookCategories", bookCategoryRepository.findAll());
 
         model.addAttribute("listProduct", listProduct);
+        model.addAttribute("bookNew", bookNew);
+        model.addAttribute("bookBest", bookBest);
+        model.addAttribute("bookLove", bookLove);
 
         // Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         // String userRole = authentication.getAuthorities().iterator().next().getAuthority();

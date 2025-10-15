@@ -279,12 +279,7 @@
                 <span>Employee</span>
             </a>
         </li><!-- End Profile Page Nav -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="/author/">
-                <i class="ri-user-star-fill"></i>
-                <span>Nhà sản xuất</span>
-            </a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link collapsed" href="/book-category/">
                 <i class="ri-book-read-fill"></i>
@@ -335,17 +330,11 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th> Image</th>
-
+                                <th>Image</th>
                                 <th>Title</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-
-                                <th>Publish year</th>
                                 <th>Category</th>
-                                <th>Author</th>
 
-                                <th> Actions</th>
+                                <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -358,9 +347,6 @@
                                          src="/admin/assets/img/bookDefault.png" alt="">
                                 </td>
                                 <td th:text="${list.title}">Brandon Jacob</td>
-                                <td th:text="${list.price}+'$'">Designer</td>
-                                <td th:text="${list.quantity}">28</td>
-                                <td th:text="${list.publishYear}">28</td>
                                 <td>
     <span th:with="categorySize=${#lists.size(list.bookCategories)}" th:each="book, bookStat : ${list.bookCategories}">
         <span th:if="${bookStat.index < 3}" th:text="${book.title}"></span>
@@ -368,13 +354,7 @@
         <span th:if="${bookStat.index == 2 and categorySize > 3}">...</span>
     </span>
                                 </td>
-                                <td>
-    <span th:with="authorSize=${#lists.size(list.authors)}" th:each="book, bookStat : ${list.authors}">
-        <span th:if="${bookStat.index < 3}" th:text="${book.name}"></span>
-         <span th:if="${!bookStat.last}">,</span>
-        <span th:if="${bookStat.index == 2 and authorSize > 2}">...</span>
-    </span>
-                                </td>
+
 
 
                                 <td th:if="${userRole == 'ADMIN' || userRole == 'EMPLOYEE'}">

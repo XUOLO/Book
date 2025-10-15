@@ -996,13 +996,44 @@ ol {
 }
 
 .latest-product__item__pic {
-	float: left;
-	margin-right: 26px;
+	width: 235px;            /* cố định chiều rộng cho khung ảnh */
+	height: 120px;           /* cố định chiều cao cho khung ảnh */
+	overflow: hidden;        /* ẩn phần ảnh thừa nếu vượt khung */
+	border-radius: 8px;      /* bo góc nhẹ, tùy chọn */
+	margin-right: 20px;
+	display: flex;
+	align-items: center;     /* canh giữa ảnh theo chiều dọc */
+	justify-content: center; /* canh giữa ảnh theo chiều ngang */
+	background: #fff;
 }
 
 .latest-product__item__pic img {
-	height: 110px;
-	width: 110px;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;     /* hoặc cover nếu muốn ảnh lấp đầy khung */
+}
+.latest-product__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* căn giữa toàn bộ nội dung theo trục dọc */
+	text-align: center;  /* căn giữa chữ */
+}
+
+.latest-product__item__pic {
+	display: flex;
+	justify-content: center; /* căn giữa ảnh theo chiều ngang */
+	align-items: center;     /* căn giữa ảnh theo chiều dọc */
+	height: 200px;           /* đặt chiều cao cố định cho vùng ảnh */
+}
+
+
+
+.latest-product__item__text {
+	margin-top: 10px;
+	min-height: 80px; /* đảm bảo các đoạn chữ có chiều cao đồng đều */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .latest-product__item__text {

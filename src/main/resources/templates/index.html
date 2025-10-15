@@ -186,7 +186,8 @@
             <div class="row featured__filter">
                 <div class="col-lg-3 col-md-4 col-sm-6 mix"
                      th:each="list,index : ${listProduct}"
-                     th:classappend="${list.categoryIds}">
+                     th:classappend="${list.categoryIds}" th:attr="data-url=@{'/product/detail/' + ${list.id}}"
+                     onclick="window.location=this.getAttribute('data-url')">
                     <div class="featured__item">
                         <div class="featured__item__pic" th:style="'background-image: url(' + ${list.image} + ');'">
                             <ul class="featured__item__pic__hover">
@@ -196,7 +197,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a th:href="@{'/product/detail/' + ${list.id}}" th:text="${list.title}">Tên sản phẩm</a></h6>
+                            <h6><a th:text="${list.title}">Tên sản phẩm</a></h6>
                             <h5>Liên hệ</h5>
                         </div>
                     </div>
@@ -235,59 +236,23 @@
                         <h4>🆕 Mới nhất</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
+                                <a class="latest-product__item" th:each="list : ${bookNew}" th:href="@{'/product/detail/' + ${list.id}}">
                                     <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-1.jpg" alt="Sản phẩm mới 1" loading="lazy">
+                                        <img th:src="${list.image}" loading="lazy">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-2.jpg" alt="Sản phẩm mới 2" loading="lazy">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-3.jpg" alt="Sản phẩm mới 3" loading="lazy">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
+                                        <h6 th:text="${list.title}"></h6>
                                         <span>Liên hệ</span>
                                     </div>
                                 </a>
                             </div>
                             <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
+                                <a class="latest-product__item" th:each="list : ${bookNew}" th:href="@{'/product/detail/' + ${list.id}}">
                                     <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-1.jpg" alt="Sản phẩm mới 1" loading="lazy">
+                                        <img th:src="${list.image}" loading="lazy">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-2.jpg" alt="Sản phẩm mới 2" loading="lazy">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-3.jpg" alt="Sản phẩm mới 3" loading="lazy">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
+                                        <h6 th:text="${list.title}"></h6>
                                         <span>Liên hệ</span>
                                     </div>
                                 </a>
@@ -300,59 +265,23 @@
                         <h4>🔥 Bán chạy</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
+                                <a  class="latest-product__item" th:each="list : ${bookBest}" th:href="@{'/product/detail/' + ${list.id}}">
                                     <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-1.jpg" alt="Sản phẩm mới 4" loading="lazy">
+                                        <img th:src="${list.image}" loading="lazy">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-2.jpg" alt="Sản phẩm mới 5" loading="lazy">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-3.jpg" alt="Sản phẩm mới 6" loading="lazy">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
+                                        <h6 th:text="${list.title}"></h6>
                                         <span>Liên hệ</span>
                                     </div>
                                 </a>
                             </div>
                             <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
+                                <a class="latest-product__item" th:each="list : ${bookBest}" th:href="@{'/product/detail/' + ${list.id}}">
                                     <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-1.jpg" alt="Sản phẩm mới 1" loading="lazy">
+                                        <img th:src="${list.image}" loading="lazy">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-2.jpg" alt="Sản phẩm mới 2" loading="lazy">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-3.jpg" alt="Sản phẩm mới 3" loading="lazy">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
+                                        <h6 th:text="${list.title}"></h6>
                                         <span>Liên hệ</span>
                                     </div>
                                 </a>
@@ -365,59 +294,23 @@
                         <h4>⭐ Yêu thích</h4>
                         <div class="latest-product__slider owl-carousel">
                             <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
+                                <a class="latest-product__item" th:each="list : ${bookLove}" th:href="@{'/product/detail/' + ${list.id}}">
                                     <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-1.jpg" alt="">
+                                        <img th:src="${list.image}" loading="lazy">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Bảo vệ hồ cua</h6>
+                                        <h6 th:text="${list.title}"></h6>
                                         <span>Liên hệ</span>
                                     </div>
                                 </a>
                             </div>
                             <div class="latest-prdouct__slider__item">
-                                <a href="#" class="latest-product__item">
+                                <a class="latest-product__item" th:each="list : ${bookLove}" th:href="@{'/product/detail/' + ${list.id}}">
                                     <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-1.jpg" alt="">
+                                        <img th:src="${list.image}" loading="lazy">
                                     </div>
                                     <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-2.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
-                                        <span>Liên hệ</span>
-                                    </div>
-                                </a>
-                                <a href="#" class="latest-product__item">
-                                    <div class="latest-product__item__pic">
-                                        <img src="/user/img/latest-product/lp-3.jpg" alt="">
-                                    </div>
-                                    <div class="latest-product__item__text">
-                                        <h6>Crab Pool Security</h6>
+                                        <h6 th:text="${list.title}"></h6>
                                         <span>Liên hệ</span>
                                     </div>
                                 </a>

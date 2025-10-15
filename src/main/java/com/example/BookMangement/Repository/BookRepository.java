@@ -26,7 +26,6 @@ public interface BookRepository extends JpaRepository<Book, Long> {
                   + "WHERE ("
                   + "LOWER(b.title) LIKE '%' || LOWER(:keyword) || '%' "
                   + "OR EXISTS (SELECT 1 FROM b.bookCategories bc WHERE LOWER(bc.title) LIKE '%' || LOWER(:keyword) || '%') "
-                  + "OR EXISTS (SELECT 1 FROM b.authors a WHERE LOWER(a.name) LIKE '%' || LOWER(:keyword) || '%') "
                   + "OR CAST(b.price AS STRING) LIKE '%' || LOWER(:keyword) || '%' "
                   + "OR CAST(b.quantity AS STRING) LIKE '%' || LOWER(:keyword) || '%' "
                   + "OR CAST(b.publishYear AS STRING) LIKE '%' || LOWER(:keyword) || '%' "
