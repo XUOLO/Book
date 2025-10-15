@@ -118,8 +118,10 @@
     /*-----------------------------
         Product Discount Slider
     -------------------------------*/
+    const $slider = $(".product__discount__slider");
+    const itemCount = $slider.find(".product__discount__item").length;
     $(".product__discount__slider").owlCarousel({
-        loop: true,
+        loop: itemCount > 3,
         margin: 0,
         items: 3,
         dots: true,

@@ -45,22 +45,17 @@ public class ShopController {
             p.setCategoryIds(ids); // ví dụ "cat1 cat2"
         }
         List<Book> bookNew = listProduct.stream()
-                .filter(b -> "1".equals(b.getType()))
+                .filter(b -> b.getType() != null && b.getType().contains("0"))
                 .toList();
-
-        List<Book> bookBest = listProduct.stream()
-                .filter(b -> "2".equals(b.getType()))
-                .toList();
-
-        List<Book> bookLove = listProduct.stream()
-                .filter(b -> "3".equals(b.getType()))
+        List<Book> bookDiscount = listProduct.stream()
+                .filter(b -> b.getType() != null && b.getType().contains("3"))
                 .toList();
         model.addAttribute("listBookCategories", bookCategoryRepository.findAll());
 
         model.addAttribute("listProduct", listProduct);
         model.addAttribute("bookNew", bookNew);
-        model.addAttribute("bookBest", bookBest);
-        model.addAttribute("bookLove", bookLove);
+        model.addAttribute("bookDiscount", bookDiscount);
+        model.addAttribute("totalProduct", listProduct.size());
         return "shop-grid";
     }
 }

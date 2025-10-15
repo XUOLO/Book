@@ -322,23 +322,10 @@
                 <div class="row mb-3">
                     <label for="title" class="col-sm-2 col-form-label">Tên</label>
                     <div class="col-sm-10">
-                        <input type="text"  id="title" required  oninvalid="this.setCustomValidity('Your title is required')" name="title" onchange="this.setCustomValidity('')"  th:field="*{title}" class="form-control">
+                        <input type="text"  id="title" required maxlength="55" oninvalid="this.setCustomValidity('Your title is required')" name="title" onchange="this.setCustomValidity('')"  th:field="*{title}" class="form-control">
                         <span class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
                     </div>
                 </div>
-
-                <div class="row mb-3">
-                    <label for="type" class="col-sm-2 col-form-label">Loại</label>
-                    <div class="col-sm-10">
-                        <select id="type" th:field="*{type}" class="form-select">
-                            <option value="0">-- Chọn loại sản phẩm --</option>
-                            <option value="1">Mới</option>
-                            <option value="2">Bán chạy</option>
-                            <option value="3">Yêu thích</option>
-                        </select>
-                    </div>
-                </div>
-
                 <div class="row mb-3">
                     <label for="shortDescription" class="col-sm-2 col-form-label">Mô tả ngắn</label>
                     <div class="col-sm-10">
@@ -397,6 +384,40 @@
                                             <label th:for="'category_' + ${list.id}"
                                                    class="form-check-label"
                                                    th:text="${list.title}">Category</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="row mb-12">
+                    <div class="col-md-6">
+                        <div class="row mb-3">
+                            <label for="category" class="col-sm-3 col-form-label">Loại</label>
+                            <div class="col-sm-7" style="padding-left: 10%;" id="type">
+                                <div class="form-group">
+                                    <label class="form-label fw-bold mb-2">Chọn loại sản phẩm</label>
+                                    <div style="max-height: 200px; overflow-y: auto; border: 1px solid #ccc; border-radius: 5px; padding: 10px;">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="types" value="0" id="type0">
+                                            <label class="form-check-label" for="type0">Mới</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="types" value="1" id="type1">
+                                            <label class="form-check-label" for="type1">Bán chạy</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="types" value="2" id="type2">
+                                            <label class="form-check-label" for="type2">Yêu thích</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="types" value="3" id="type3">
+                                            <label class="form-check-label" for="type3">Khuyến mãi</label>
                                         </div>
                                     </div>
                                 </div>

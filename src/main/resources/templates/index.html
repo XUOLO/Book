@@ -61,7 +61,32 @@
     <!-- Header Section Begin -->
     <header class="header">
         <div class="header__top">
-             
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> banhkeosaigon@gmail.com</li>
+                                <li>Freeship từ 500.000₫</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+
+                            <div class="header__top__right__auth">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container">
             <div class="row">
@@ -108,7 +133,16 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="hero__search">
-                        
+                        <div class="hero__search__form">
+                            <form action="#">
+
+                                <input type="text" placeholder="Nhập sản phẩm tìm kiếm">
+                               <button type="submit" class="site-btn">
+  <i class="fa fa-search"></i>
+</button>
+
+                            </form>
+                        </div>
                         <div class="hero__search__phone">
                             <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
@@ -186,7 +220,8 @@
             <div class="row featured__filter">
                 <div class="col-lg-3 col-md-4 col-sm-6 mix"
                      th:each="list,index : ${listProduct}"
-                     th:classappend="${list.categoryIds}" th:attr="data-url=@{'/product/detail/' + ${list.id}}"
+                     th:classappend="${list.categoryIds}"
+                     th:attr="data-url=@{'/product/detail/' + ${list.id}}"
                      onclick="window.location=this.getAttribute('data-url')">
                     <div class="featured__item">
                         <div class="featured__item__pic" th:style="'background-image: url(' + ${list.image} + ');'">
@@ -197,7 +232,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a th:text="${list.title}">Tên sản phẩm</a></h6>
+                            <h6 th:text="${list.title}">Tên sản phẩm</h6>
                             <h5>Liên hệ</h5>
                         </div>
                     </div>
@@ -339,7 +374,7 @@
                         <ul>
                             <li>Địa chỉ: 4H1 Đường 52 KDC Tân Quy Đông, Tân Phong, Quận 7. HCM</li>
                             <li>Điện thoại: 0906170760</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Email: banhkeosaigon@gmail.com</li>
                         </ul>
                     </div>
                 </div>
@@ -402,7 +437,7 @@
     <script src="user/js/owl.carousel.min.js"></script>
     <script src="user/js/main.js"></script>
 
-
+<script type="text/javascript" src="user/js/tet.js"></script>
 
 </body>
 

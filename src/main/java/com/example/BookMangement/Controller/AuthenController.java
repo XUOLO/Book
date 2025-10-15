@@ -60,15 +60,13 @@ public class AuthenController {
             p.setCategoryIds(ids); // ví dụ "cat1 cat2"
         }
         List<Book> bookNew = listProduct.stream()
-                .filter(b -> "1".equals(b.getType()))
+                .filter(b -> b.getType() != null && b.getType().contains("0"))
                 .toList();
-
         List<Book> bookBest = listProduct.stream()
-                .filter(b -> "2".equals(b.getType()))
+                .filter(b -> b.getType() != null && b.getType().contains("1"))
                 .toList();
-
         List<Book> bookLove = listProduct.stream()
-                .filter(b -> "3".equals(b.getType()))
+                .filter(b -> b.getType() != null && b.getType().contains("2"))
                 .toList();
         model.addAttribute("listBookCategories", bookCategoryRepository.findAll());
 

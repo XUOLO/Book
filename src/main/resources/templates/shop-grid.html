@@ -63,7 +63,30 @@
     <header class="header">
         <div class="header__top">
             <div class="container">
-                
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> banhkeosaigon@gmail.com</li>
+                                <li>Freeship từ 500.000₫</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+
+                            <div class="header__top__right__auth">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -114,7 +137,16 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="hero__search">
-                        
+                        <div class="hero__search__form">
+                            <form action="#">
+
+                                <input type="text" placeholder="Nhập sản phẩm tìm kiếm">
+                               <button type="submit" class="site-btn">
+  <i class="fa fa-search"></i>
+</button>
+
+                            </form>
+                        </div>
                         <div class="hero__search__phone">
                             <div class="hero__search__phone__icon">
                                 <i class="fa fa-phone"></i>
@@ -211,12 +243,12 @@
                         </div>
                         <div class="row">
                             <div class="product__discount__slider owl-carousel">
-                                <div class="col-lg-4" th:each="list : ${listProduct}"th:attr="data-url=@{'/product/detail/' + ${list.id}}"
+                                <div class="col-lg-4" th:each="list : ${bookDiscount}" th:attr="data-url=@{'/product/detail/' + ${list.id}}"
                                      onclick="window.location=this.getAttribute('data-url')">
                                     <div class="product__discount__item">
                                         <div class="product__discount__item__pic set-bg"
                                              th:attr="data-setbg=${list.image}">
-                                            <div class="product__discount__percent">-20%</div>
+                                            <div class="product__discount__percent">HOT</div>
                                             <ul class="product__item__pic__hover">
                                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -232,16 +264,22 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="filter__item">
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
 
                             </div>
                             <div class="col-lg-4 col-md-4">
-
+                                <div class="filter__found">
+                                    <h6>Tìm thấy <span th:text="${totalProduct}">16</span>sản phẩm</h6>
+                                </div>
                             </div>
                             <div class="col-lg-4 col-md-3">
-
+                                <div class="filter__option">
+                                    <span class="icon_grid-2x2"></span>
+                                    <span class="icon_ul"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -288,7 +326,7 @@
                         <ul>
                             <li>Địa chỉ: 4H1 Đường 52 KDC Tân Quy Đông, Tân Phong, Quận 7. HCM</li>
                             <li>Điện thoại: 0906170760</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Email: banhkeosaigon@gmail.com</li>
                         </ul>
                     </div>
                 </div>
@@ -351,6 +389,7 @@
     <script src="user/js/owl.carousel.min.js"></script>
     <script src="user/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+    <script type="text/javascript" src="user/js/tet.js"></script>
 
 
 
