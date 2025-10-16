@@ -23,4 +23,6 @@ public interface BookService {
     public long getTotalBooks();
 
     List<Book> getAll();
+
+    Page<Book> getBooks(int page, int size);
 }

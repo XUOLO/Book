@@ -45,7 +45,7 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="/">Trang chủ</a></li>
-                <li><a href="/shop-grid">Cửa hàng</a></li>
+                <li><a href="/shop-grid/products">Cửa hàng</a></li>
                 <li><a href="/contact">Liên hệ</a></li>
             </ul>
         </nav>
@@ -100,7 +100,7 @@
                      <nav class="header__menu">
                         <ul>
                             <li><a href="/">Trang chủ</a></li>
-                            <li class="active"><a href="/shop-grid">Sản phẩm</a></li>
+                            <li class="active"><a href="/shop-grid/products">Sản phẩm</a></li>
                             
                             <li><a href="/contact">Liên hệ</a></li>
                         </ul>
@@ -164,7 +164,8 @@
     <!-- Hero Section End -->
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="/user/img/breadcrumb.jpg">
+<!--    data-setbg="/user/img/breadcrumb.jpg"-->
+    <section class="breadcrumb-section set-bg"  style="background-color:#e53935;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -200,10 +201,70 @@
                             
                         </div>
                         <div class="sidebar__item sidebar__item__color--option">
-                  
+                            <h4>Màu sắc</h4>
+                            <div class="sidebar__item__color sidebar__item__color--white">
+                                <label for="white">
+                                    Trắng
+                                    <input type="radio" id="white">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__color sidebar__item__color--gray">
+                                <label for="gray">
+                                    Xám
+                                    <input type="radio" id="gray">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__color sidebar__item__color--red">
+                                <label for="red">
+                                    Đỏ
+                                    <input type="radio" id="red">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__color sidebar__item__color--black">
+                                <label for="black">
+                                    Đen
+                                    <input type="radio" id="black">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__color sidebar__item__color--blue">
+                                <label for="blue">
+                                    Xanh
+                                    <input type="radio" id="blue">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__color sidebar__item__color--green">
+                                <label for="green">
+                                    Xanh lá
+                                    <input type="radio" id="green">
+                                </label>
+                            </div>
                         </div>
                         <div class="sidebar__item">
-                     
+                            <h4>Loại bán chạy</h4>
+                            <div class="sidebar__item__size">
+                                <label for="large">
+                                    Hộp thiếc
+                                    <input type="radio" id="large">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label for="medium">
+                                    Hộp giấy
+                                    <input type="radio" id="medium">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label for="small">
+                                    Hình trái tim
+                                    <input type="radio" id="small">
+                                </label>
+                            </div>
+                            <div class="sidebar__item__size">
+                                <label for="tiny">
+                                    Hình hộp 2 tầng
+                                    <input type="radio" id="tiny">
+                                </label>
+                            </div>
                         </div>
                         <div class="sidebar__item">
                             <div class="latest-product__text">
@@ -303,15 +364,30 @@
 
                     </div>
                     <div class="product__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                        <!-- Nút về trước -->
+                        <a th:if="${currentPage > 0}"
+                           th:href="@{'/shop-grid/products'(page=${currentPage - 1}, size=10)}">
+                            <i class="fa fa-long-arrow-left"></i>
+                        </a>
+
+                        <!-- Danh sách trang -->
+                        <a th:each="i : ${#numbers.sequence(0, totalPages - 1)}"
+                           th:href="@{'/shop-grid/products'(page=${i}, size=10)}"
+                           th:text="${i + 1}"
+                           th:classappend="${i == currentPage} ? 'active' : ''"></a>
+
+                        <!-- Nút kế tiếp -->
+                        <a th:if="${currentPage + 1 < totalPages}"
+                           th:href="@{'/shop-grid/products'(page=${currentPage + 1}, size=10)}">
+                            <i class="fa fa-long-arrow-right"></i>
+                        </a>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Product Section End -->
 
     <!-- Footer Section Begin -->
@@ -380,16 +456,16 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="user/js/jquery-3.3.1.min.js"></script>
-    <script src="user/js/bootstrap.min.js"></script>
-    <script src="user/js/jquery.nice-select.min.js"></script>
-    <script src="user/js/jquery-ui.min.js"></script>
-    <script src="user/js/jquery.slicknav.js"></script>
-    <script src="user/js/mixitup.min.js"></script>
-    <script src="user/js/owl.carousel.min.js"></script>
-    <script src="user/js/main.js"></script>
+    <script src="/user/js/jquery-3.3.1.min.js"></script>
+    <script src="/user/js/bootstrap.min.js"></script>
+    <script src="/user/js/jquery.nice-select.min.js"></script>
+    <script src="/user/js/jquery-ui.min.js"></script>
+    <script src="/user/js/jquery.slicknav.js"></script>
+    <script src="/user/js/mixitup.min.js"></script>
+    <script src="/user/js/owl.carousel.min.js"></script>
+    <script src="/user/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
-    <script type="text/javascript" src="user/js/tet.js"></script>
+    <!--    <script type="text/javascript" src="user/js/tet.js"></script>-->
 
 
 

@@ -504,10 +504,11 @@ ol {
 	bottom: -15px;
 	right: 0;
 	height: 4px;
-	width: 80px;
+	width: 120px;
 	background: #e53935;
 	content: "";
 	margin: 0 auto;
+	top: -10px;
 }
 
 .set-bg {

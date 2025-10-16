@@ -107,7 +107,7 @@ public class BookController {
 
 
     @PostMapping("/save-book")
-    public String saveBook(HttpSession session, @RequestParam("image") MultipartFile imageFile,@RequestParam("images") List<MultipartFile> imageFiles,@RequestParam("types") List<Long> types, @ModelAttribute("book") Book book, BindingResult bindingResult, RedirectAttributes redirectAttributes,  Model model) throws IOException {
+    public String saveBook(HttpSession session, @RequestParam("image") MultipartFile imageFile,@RequestParam("images") List<MultipartFile> imageFiles,@RequestParam(value = "types", required = false) List<Long> types, @ModelAttribute("book") Book book, BindingResult bindingResult, RedirectAttributes redirectAttributes,  Model model) throws IOException {
 
 
         String name = (String) session.getAttribute("name");
@@ -117,7 +117,9 @@ public class BookController {
         book.setUpdateDate(LocalDate.now());
         book.setUpdateBy(name);
         book.setIsDelete(false);
-        book.setType(types.toString());
+        if(!CollectionUtils.isEmpty(types)) {
+            book.setType(types.toString());
+        }
         String imageUrl = cloudinaryService.uploadFile(imageFile);
         book.setImage(imageUrl); // Lưu URL vào DB
 
@@ -139,12 +141,14 @@ public class BookController {
     }
 
     @PostMapping("/edit-book/edit")
-    public String editBook(HttpSession session, @ModelAttribute("book") Book book,@RequestParam("types") List<Long> types, BindingResult bindingResult, @RequestParam("bookCategories") List<Long> bookCategoryIds,@RequestParam(value = "images", required = false) List<Long> images, RedirectAttributes redirectAttributes)  {
+    public String editBook(HttpSession session, @ModelAttribute("book") Book book,@RequestParam(value = "types",required = false) List<Long> types, BindingResult bindingResult, @RequestParam("bookCategories") List<Long> bookCategoryIds,@RequestParam(value = "images", required = false) List<Long> images, RedirectAttributes redirectAttributes)  {
         String nameLogin = (String) session.getAttribute("name");
         book.setUpdateBy(nameLogin);
         book.setUpdateDate(LocalDate.now());
         book.setIsDelete(book.getIsDelete());
-        book.setType(types.toString());
+        if(!CollectionUtils.isEmpty(types)) {
+            book.setType(types.toString());
+        }
         book.clearBookCategories();
         book.clearBookImagess();
         List<BookCategory> bookCategories = bookCategoryRepository.findAllById(bookCategoryIds);
