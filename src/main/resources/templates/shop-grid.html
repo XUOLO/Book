@@ -326,7 +326,7 @@
                         </div>
                     </div>
 
-                    <div class="filter__item">
+                    <div class="filter__item" id ="product-section">
                         <div class="row">
                             <div class="col-lg-4 col-md-5">
 
@@ -345,7 +345,6 @@
                         </div>
                     </div>
                     <div id="product-list" class="row"></div>
-
                     <div class="product__pagination" id="pagination"></div>
 
 
@@ -359,22 +358,32 @@
         });
 
         function loadProducts(page) {
-            fetch(`/shop-grid/api/products?page=${page}&size=10`)
-                .then(res => res.json())
+            fetch(`/shop-grid/api/products?page=${page}&size=9`)
+                .then(res => {
+                    if (!res.ok) throw new Error("Lỗi khi gọi API");
+                    return res.json();
+                })
                 .then(data => {
-                    console.log("Products:", data);
                     renderProducts(data.listProduct);
                     renderPagination(data.currentPage, data.totalPages);
+                    scrollToProducts(); // 👈 tự cuộn đến vị trí sản phẩm sau khi đổi trang
                 })
                 .catch(err => console.error("Lỗi load sản phẩm:", err));
         }
 
         function renderProducts(products) {
             const container = document.getElementById("product-list");
+            if (!products || products.length === 0) {
+                container.innerHTML = "<p class='text-center w-100'>Không có sản phẩm nào.</p>";
+                return;
+            }
+
             container.innerHTML = products.map(p => `
             <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="product__item" onclick="window.location='/product/detail/${p.id}'">
-                    <div class="product__item__pic set-bg" style="background-image: url('${p.image}')">
+                <div class="product__item" style="cursor:pointer"
+                     onclick="window.location='/product/detail/${p.id}'">
+                    <div class="product__item__pic set-bg"
+                         style="background-image: url('${p.image || '/img/no-image.jpg'}')">
                         <ul class="product__item__pic__hover">
                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -382,7 +391,7 @@
                         </ul>
                     </div>
                     <div class="product__item__text">
-                        <h6><a>${p.title}</a></h6>
+                        <h6><a>${p.title || 'Sản phẩm'}</a></h6>
                         <h5>Liên hệ</h5>
                     </div>
                 </div>
@@ -394,19 +403,33 @@
             const pag = document.getElementById("pagination");
             let html = "";
 
+            // Nút lùi
             if (current > 0) {
-                html += `<a href="#" onclick="loadProducts(${current - 1})"><i class='fa fa-long-arrow-left'></i></a>`;
+                html += `<a href="#" onclick="event.preventDefault(); loadProducts(${current - 1});">
+                        <i class='fa fa-long-arrow-left'></i>
+                     </a>`;
             }
 
+            // Số trang
             for (let i = 0; i < total; i++) {
-                html += `<a href="#" class="${i === current ? 'active' : ''}" onclick="loadProducts(${i})">${i + 1}</a>`;
+                html += `<a href="#" class="${i === current ? 'active' : ''}"
+                           onclick="event.preventDefault(); loadProducts(${i});">${i + 1}</a>`;
             }
 
+            // Nút tiến
             if (current + 1 < total) {
-                html += `<a href="#" onclick="loadProducts(${current + 1})"><i class='fa fa-long-arrow-right'></i></a>`;
+                html += `<a href="#" onclick="event.preventDefault(); loadProducts(${current + 1});">
+                        <i class='fa fa-long-arrow-right'></i>
+                     </a>`;
             }
 
             pag.innerHTML = html;
+        }
+
+        // 👇 Thêm đoạn này để giữ scroll đúng vị trí
+        function scrollToProducts() {
+            const section = document.getElementById("product-section");
+            section.scrollIntoView({ behavior: "smooth" });
         }
     </script>
 

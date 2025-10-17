@@ -39,7 +39,7 @@ public class ShopController {
 
     @GetMapping("/products")
     public String showListEmployee(@RequestParam(defaultValue = "0") int page,
-                                   @RequestParam(defaultValue = "10") int size,
+                                   @RequestParam(defaultValue = "9") int size,
                                    Model model,
                                    HttpSession session) {
 
