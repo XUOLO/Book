@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Bánh kẹo Sài Gòn - Liên hệ, địa chỉ, hỗ trợ">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bánh kẹo Sài Gòn</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="/user/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/user/css/style.css" type="text/css">
+</head>
+
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Humberger Begin -->
+<div class="humberger__menu__overlay"></div>
+<div class="humberger__menu__wrapper">
+    <div class="humberger__menu__logo">
+        <a href="#"><img src="/user/img/logo.png" alt="Logo Bánh kẹo Sài Gòn" loading="lazy"></a>
+    </div>
+    <div class="humberger__menu__cart">
+
+    </div>
+    <div class="humberger__menu__widget">
+
+    </div>
+    <nav class="humberger__menu__nav mobile-menu">
+        <ul>
+            <li class="active"><a href="/">Trang chủ</a></li>
+            <li><a href="/shop-grid/products">Sản phẩm</a></li>
+            <li><a href=".//contact">Liên hệ</a></li>
+        </ul>
+    </nav>
+    <div id="mobile-menu-wrap"></div>
+    <div class="header__top__right__social">
+
+    </div>
+    <div class="humberger__menu__contact">
+
+    </div>
+</div>
+<!-- Humberger End -->
+
+<!-- Header Section Begin -->
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__left">
+                        <ul>
+                            <li><i class="fa fa-envelope"></i> banhkeosaigon@gmail.com</li>
+                            <li>Freeship từ 500.000₫</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__right">
+                        <div class="header__top__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                        </div>
+
+                        <div class="header__top__right__auth">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header__logo">
+                    <a href="/"><img src="/user/img/logo.png" alt="Logo Bánh kẹo Sài Gòn" loading="lazy"></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="header__menu">
+                    <ul>
+                        <li><a href="/">Trang chủ</a></li>
+                        <li ><a href="/shop-grid/products">Sản phẩm</a></li>
+
+                        <li class="active"><a href=".//contact">Liên hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+
+            </div>
+        </div>
+        <div class="humberger__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+<!-- Header Section End -->
+
+<!-- Hero Section Begin -->
+<section class="hero hero-normal">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="hero__categories">
+                    <div class="hero__categories__all">
+                        <i class="fa fa-bars"></i>
+                        <span>Danh mục</span>
+                    </div>
+                    <ul>
+                        <li th:each="list : ${listBookCategories}"
+                            th:text="${list.title}">
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="hero__search">
+                    <div class="hero__search__form">
+                        <form action="#">
+
+                            <input type="text" placeholder="Nhập sản phẩm tìm kiếm">
+                            <button type="submit" class="site-btn">
+                                <i class="fa fa-search"></i>
+                            </button>
+
+                        </form>
+                    </div>
+                    <div class="hero__search__phone">
+                        <div class="hero__search__phone__icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="hero__search__phone__text">
+                            <h5>0906170760</h5>
+                            <span>Hỗ trợ 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Breadcrumb Section Begin -->
+<!--    data-setbg="/user/img/breadcrumb.jpg"-->
+
+<!-- Contact Section Begin -->
+<section class="contact spad">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="contact__widget">
+                    <h2 style="font-size: 80px; font-weight: bold; color: #ff6b6b;">404</h2>
+                    <h3 style="font-weight: 600; margin-bottom: 20px;">Rất tiếc! Trang bạn đang tìm không tồn tại.</h3>
+                    <p>
+                        Có thể đường dẫn đã bị thay đổi, nội dung đã được gỡ bỏ,
+                        hoặc bạn đã nhập sai địa chỉ.
+                        Hãy quay lại trang chủ để tiếp tục khám phá nhé!
+                    </p>
+                    <a href="/" class="site-btn" style="margin-top: 20px; display: inline-block;">Quay lại trang chủ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section End -->
+
+<!-- Map Begin -->
+
+<!-- Map End -->
+
+<!-- Footer Section Begin -->
+<footer class="footer spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="footer__about">
+                    <div class="footer__about__logo">
+                        <a href="/"><img src="/user/img/logo.png" alt=""></a>
+                    </div>
+                    <ul>
+                        <li>Địa chỉ: 4H1 Đường 52 KDC Tân Quy Đông, Tân Phong, Quận 7. HCM</li>
+                        <li>Điện thoại: 0906170760</li>
+                        <li>Email: banhkeosaigon@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                <div class="footer__widget">
+                    <h6>Liên kết hữu ích</h6>
+                    <ul>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Về cửa hàng</a></li>
+                        <li><a href="#">Mua sắm an toàn</a></li>
+                        <li><a href="#">Thông tin giao hàng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Sơ đồ trang</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Chúng tôi là ai</a></li>
+                        <li><a href="#">Dịch vụ</a></li>
+                        <li><a href="#">Dự án</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a href="#">Sáng tạo</a></li>
+                        <li><a href="#">Khách hàng nói gì</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="footer__widget">
+                    <h6>Đăng ký nhận tin</h6>
+                    <p>Nhận email cập nhật về cửa hàng và ưu đãi mới nhất.</p>
+                    <form action="#">
+                        <input type="text" placeholder="Nhập email của bạn">
+                        <button type="submit" class="site-btn">Đăng ký</button>
+                    </form>
+                    <div class="footer__widget__social">
+                        <a href="https://www.facebook.com/share/1Avf2Aaj8f/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer__copyright">
+                    <!-- Đã xoá copyright -->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Js Plugins -->
+<script src="user/js/jquery-3.3.1.min.js"></script>
+<script src="user/js/bootstrap.min.js"></script>
+<script src="user/js/jquery.nice-select.min.js"></script>
+<script src="user/js/jquery-ui.min.js"></script>
+<script src="user/js/jquery.slicknav.js"></script>
+<script src="user/js/mixitup.min.js"></script>
+<script src="user/js/owl.carousel.min.js"></script>
+<script src="user/js/main.js"></script>
+<!--    <script type="text/javascript" src="user/js/tet.js"></script>-->
+
+
+
+</body>
+
+</html>

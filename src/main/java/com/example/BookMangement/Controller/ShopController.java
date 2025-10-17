@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -76,6 +79,20 @@ public class ShopController {
     }
 
 
+    @GetMapping("/api/products")
+    @ResponseBody
+    public Map<String, Object> getProductsApi(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "9") int size) {
+
+        Page<Book> productPage = bookService.getBooks(page, size);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("listProduct", productPage.getContent());
+        response.put("currentPage", page);
+        response.put("totalPages", productPage.getTotalPages());
+        return response;
+    }
 
 
 }
